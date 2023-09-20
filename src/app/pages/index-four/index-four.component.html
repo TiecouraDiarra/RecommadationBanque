@@ -1,0 +1,104 @@
+<!-- START NAVBAR -->
+<nav id="navbar" class="navbar navbar-expand-lg nav-light fixed-top sticky" (window:scroll)="windowScroll()">
+    <div class="container">
+        <a class="navbar-brand" href="javascript:void(0);">
+            <span class="logo-light-mode">
+                <img src="assets/images/logo-light.png" class="l-light" alt="">
+                <img src="assets/images/logo-dark.png" class="l-dark" alt="">
+            </span>
+            <img src="assets/images/logo-light.png" class="logo-dark-mode" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" (click)="toggleMenu()"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i-feather name="menu"></i-feather>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="navbar-navlist">
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'home'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#home'">Home</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'service'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#service'"
+                        [ngxScrollToOffset]="2">Services</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'about'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#about'"
+                        [ngxScrollToOffset]="2">About Us</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'price'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#price'"
+                        [ngxScrollToOffset]="2">Pricing</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'blog'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#blog'"
+                        [ngxScrollToOffset]="2">Blogs</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'contact'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#contact'">Contact Us</a>
+                </li>
+            </ul>
+
+            <ul class="list-inline menu-social mb-0 ps-lg-4 ms-2">
+                <li class="list-inline-item">
+                    <a routerLink="/auth/login" target="_blank" class="btn btn-icon btn-pills btn-primary border-0">
+                        <i-feather name="user" class="icons"></i-feather>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--end collapse-->
+    </div>
+    <!--end container-->
+</nav>
+<!-- END NAVBAR -->
+<div appScrollspy [spiedTags]="['SECTION']" (sectionChange)="onSectionChange($event)">
+
+    <!-- Start Hero -->
+    <section class="bg-half-360 pb-5 d-table w-100" style="background: url('assets/images/bg.jpg');" id="home">
+        <div class="bg-video-wrapper">
+            <iframe
+                src="https://player.vimeo.com/video/543682481?background=1&autoplay=1&loop=1&byline=0&title=0"></iframe>
+
+        </div>
+        <div class="bg-overlay bg-black opacity-9"></div>
+        <div class="container mb-5 pb-5">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="title-heading text-center">
+                        <a href="#!" data-type="youtube" data-id="yba7hPeTSjk"
+                            class="play-btn  mb-5 lightbox border bg-white shadow-lg">
+                            <i-feather name="play" class="fea icon-ex-md text-primary"></i-feather>
+                        </a>
+
+                        <h4 class="heading text-white mb-4">Get Your Ticket Today!</h4>
+                        <p class="text-white-50 para-desc mx-auto mb-0">This is just a simple text made for this unique
+                            and awesome template, you can replace it with any text.</p>
+
+                        <div class="mt-4 pt-2">
+                            <a href="" class="btn btn-primary btn-pills border-0">Explore Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+    <!--end section-->
+    <!-- End Hero -->
+
+    <app-services></app-services>
+    <app-about></app-about>
+    <app-pricing></app-pricing>
+    <app-blog></app-blog>
+    <app-contact></app-contact>
+    <app-footer></app-footer>
+</div>
+<!-- Back to top -->
+<a href="javascript:void(0);" [ngxScrollTo]="'#home'" id="back-to-top" class="back-to-top rounded-pill fs-5">
+    <i-feather name="arrow-up" class="fea icon-sm icons"></i-feather>
+</a>
+<!-- Back to top -->

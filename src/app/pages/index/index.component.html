@@ -1,0 +1,108 @@
+<!-- START NAVBAR -->
+<nav id="navbar" class="navbar navbar-expand-lg nav-light fixed-top sticky" (window:scroll)="windowScroll()">
+    <div class="container">
+        <a class="navbar-brand" href="javascript:void(0);">
+            <span class="logo-light-mode">
+                <img src="assets/images/logo-light.png" class="l-light" alt="">
+                <img src="assets/images/logo-dark.png" class="l-dark" alt="">
+            </span>
+            <img src="assets/images/logo-light.png" class="logo-dark-mode" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" (click)="toggleMenu()"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i-feather name="menu"></i-feather>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0" id="navbar-navlist">
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'home'}">
+                    <a class="nav-link" [ngxScrollTo]="'home'" href="javascript:void(0);">Home</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'service'}">
+                    <a class="nav-link" [ngxScrollTo]="'service'" href="javascript:void(0);">Services</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'about'}">
+                    <a class="nav-link" [ngxScrollTo]="'about'" href="javascript:void(0);">About Us</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'price'}">
+                    <a class="nav-link" [ngxScrollTo]="'price'" href="javascript:void(0);">Pricing</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'blog'}">
+                    <a class="nav-link" [ngxScrollTo]="'blog'" href="javascript:void(0);">Blogs</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'contact'}">
+                    <a class="nav-link" [ngxScrollTo]="'contact'" href="javascript:void(0);">Contact Us</a>
+                </li>
+            </ul>
+
+            <ul class="list-inline menu-social mb-0 ps-lg-4 ms-2">
+                <li class="list-inline-item">
+                    <a routerLink="/auth/login" target="_blank" class="btn btn-icon btn-pills btn-primary border-0">
+                        <i-feather name="user" class="icons"></i-feather>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--end collapse-->
+    </div>
+    <!--end container-->
+</nav>
+<!-- END NAVBAR -->
+<div appScrollspy [spiedTags]="['SECTION']" (sectionChange)="onSectionChange($event)">
+    <!-- Start Hero -->
+    <section class="bg-half-260 d-table w-100" style="background: url('assets/images/bg.jpg');" id="home">
+        <div class="bg-overlay bg-gradient-primary" style="opacity: 0.8;"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="title-heading text-center">
+                        <h4 class="heading text-white mb-4">Get Better Results Today</h4>
+                        <p class="text-white-50 para-desc mx-auto mb-0">This is just a simple text made for this unique
+                            and awesome template, you can replace it with any text.</p>
+
+                        <a (click)="open(content)" class="play-btn  mt-5 lightbox border bg-white shadow-lg">
+                            <i-feather name="play" class="fea icon-ex-md text-primary"></i-feather>
+                        </a>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+    <ng-template #content let-c="close" let-d="dismiss">
+        <!-- <div class="modal-header">
+            <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+        </div> -->
+        <div class="modal-body">
+            <iframe width="100%" height="450" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe>
+        </div>
+
+    </ng-template>
+
+    <!--end section-->
+    <div class="position-relative">
+        <div class="shape overflow-hidden text-white">
+            <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </div>
+    <!-- End Hero -->
+
+    <!-- End Hero -->
+    <app-services></app-services>
+    <app-about></app-about>
+    <app-pricing></app-pricing>
+    <app-blog></app-blog>
+    <app-contact></app-contact>
+    <app-footer></app-footer>
+</div>
+<!-- Back to top -->
+<a href="javascript:void(0);" [ngxScrollTo]="'#home'" id="back-to-top" class="back-to-top rounded-pill fs-5">
+    <i-feather name="arrow-up" class="fea icon-sm icons"></i-feather>
+</a>
+<!-- Back to top -->

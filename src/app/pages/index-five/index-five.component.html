@@ -1,0 +1,149 @@
+<!-- START NAVBAR -->
+<nav id="navbar" class="navbar navbar-expand-lg nav-light fixed-top sticky" (window:scroll)="windowScroll()">
+    <div class="container">
+        <a class="navbar-brand" href="">
+            <span class="logo-light-mode">
+                <img src="assets/images/logo-light.png" class="l-light" alt="">
+                <img src="assets/images/logo-dark.png" class="l-dark" alt="">
+            </span>
+            <img src="assets/images/logo-light.png" class="logo-dark-mode" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" (click)="toggleMenu()"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i-feather name="menu"></i-feather>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="navbar-navlist">
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'home'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#home'">Home</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'service'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#service'"
+                        [ngxScrollToOffset]="2">Services</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'about'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#about'"
+                        [ngxScrollToOffset]="2">About Us</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'price'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#price'"
+                        [ngxScrollToOffset]="2">Pricing</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'blog'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#blog'"
+                        [ngxScrollToOffset]="2">Blogs</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'contact'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#contact'">Contact Us</a>
+                </li>
+            </ul>
+
+            <ul class="list-inline menu-social mb-0 ps-lg-4 ms-2">
+                <li class="list-inline-item">
+                    <a routerLink="/auth/login" target="_blank" class="btn btn-icon btn-pills btn-primary border-0">
+                        <i-feather name="user" class="icons"></i-feather>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--end collapse-->
+    </div>
+    <!--end container-->
+</nav>
+<!-- END NAVBAR -->
+<div appScrollspy [spiedTags]="['SECTION']" (sectionChange)="onSectionChange($event)">
+
+    <!-- Start Hero -->
+    <section class="bg-half-170 d-table w-100" style="background: url('assets/images/bg-3.jpg') center center;"
+        id="home">
+        <div class="bg-overlay"></div>
+        <div class="container">
+            <div class="row justify-content-end mt-5">
+                <div class="col-xl-5 col-lg-5 col-md-6">
+                    <div class="card shadow rounded-md border-0 ms-xl-5">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">Get 30 days FREE Trial</h4>
+
+                            <form class="login-form mt-4">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label class="form-label fs-6">First name <span
+                                                    class="text-danger">*</span></label>
+                                            <div class="form-icon position-relative">
+                                                <input type="text" class="form-control" placeholder="First Name"
+                                                    name="s" required="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label class="form-label fs-6">Your Email <span
+                                                    class="text-danger">*</span></label>
+                                            <div class="form-icon position-relative">
+                                                <input type="email" class="form-control" placeholder="Email"
+                                                    name="email" required="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label class="form-label fs-6">Password <span
+                                                    class="text-danger">*</span></label>
+                                            <div class="form-icon position-relative">
+                                                <input type="password" class="form-control" placeholder="Password"
+                                                    required="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label class="form-check-label fs-6" for="flexCheckDefault">
+                                                    I Accept <a href="#" class="text-primary">Terms And Condition</a>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                    <div class="col-md-12">
+                                        <div class="d-grid">
+                                            <button class="btn btn-primary btn-pills border-0">Register</button>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+                            </form>
+                            <!--end form-->
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+    <!--end section-->
+    <!-- End Hero -->
+
+    <app-services></app-services>
+    <app-about></app-about>
+    <app-pricing></app-pricing>
+    <app-blog></app-blog>
+    <app-contact></app-contact>
+    <app-footer></app-footer>
+</div>
+<!-- Back to top -->
+<a href="javascript:void(0);" [ngxScrollTo]="'#home'" id="back-to-top" class="back-to-top rounded-pill fs-5">
+    <i-feather name="arrow-up" class="fea icon-sm icons"></i-feather>
+</a>
+<!-- Back to top -->

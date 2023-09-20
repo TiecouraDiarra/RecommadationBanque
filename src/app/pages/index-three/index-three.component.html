@@ -1,0 +1,103 @@
+<!-- START NAVBAR -->
+<nav id="navbar" class="navbar navbar-expand-lg nav-light fixed-top sticky" (window:scroll)="windowScroll()">
+    <div class="container">
+        <a class="navbar-brand" href="javascript:void(0);">
+            <span class="logo-light-mode">
+                <img src="assets/images/logo-light.png" class="l-light" alt="">
+                <img src="assets/images/logo-dark.png" class="l-dark" alt="">
+            </span>
+            <img src="assets/images/logo-light.png" class="logo-dark-mode" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" (click)="toggleMenu()"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i-feather name="menu"></i-feather>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="navbar-navlist">
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'home'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#home'">Home</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'service'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#service'"
+                        [ngxScrollToOffset]="2">Services</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'about'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#about'"
+                        [ngxScrollToOffset]="2">About Us</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'price'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#price'"
+                        [ngxScrollToOffset]="2">Pricing</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'blog'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#blog'"
+                        [ngxScrollToOffset]="2">Blogs</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'contact'}">
+                    <a class="nav-link" href="javascript: void(0);" [ngxScrollTo]="'#contact'">Contact Us</a>
+                </li>
+            </ul>
+
+            <ul class="list-inline menu-social mb-0 ps-lg-4 ms-2">
+                <li class="list-inline-item">
+                    <a routerLink="/auth/login" target="_blank" class="btn btn-icon btn-pills btn-primary border-0">
+                        <i-feather name="user" class="icons"></i-feather>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--end collapse-->
+    </div>
+    <!--end container-->
+</nav>
+<!-- END NAVBAR -->
+<div appScrollspy [spiedTags]="['SECTION']" (sectionChange)="onSectionChange($event)">
+
+    <!-- Start Hero -->
+    <section class="bg-home d-flex align-items-center bg-gradient-primary" style="height: auto;" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mt-0 mt-md-5 pt-0 pt-md-5">
+                    <div class="title-heading margin-top-100">
+                        <h1 class="heading text-white mb-3">Start Creating Beautiful Landing <br> Pages Today!</h1>
+                        <p class="para-desc mx-auto text-white-50">This is just a simple text made for this unique and
+                            awesome template, you can replace it with any text.</p>
+                        <div class="mt-4 pt-2">
+                            <a href="#about" class="btn btn-primary btn-pills border-0">Start Free Trial <i
+                                    class="uil uil-angle-right-b"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="home-dashboard">
+                        <img src="assets/images/laptop.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+    <!--end section-->
+    <div class="position-relative">
+        <div class="shape overflow-hidden text-white">
+            <svg viewBox="0 0 2880 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M720 125L2160 0H2880V250H0V125H720Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </div>
+    <!-- End Hero -->
+    <app-services></app-services>
+    <app-about></app-about>
+    <app-pricing></app-pricing>
+    <app-blog></app-blog>
+    <app-contact></app-contact>
+    <app-footer></app-footer>
+</div>
+<!-- Back to top -->
+<a href="javascript:void(0);" [ngxScrollTo]="'#home'" id="back-to-top" class="back-to-top rounded-pill fs-5">
+    <i-feather name="arrow-up" class="fea icon-sm icons"></i-feather>
+</a>
+<!-- Back to top -->
