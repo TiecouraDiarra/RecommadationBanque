@@ -18,6 +18,13 @@ import { IndexFourComponent } from './index-four/index-four.component';
 import { IndexFiveComponent } from './index-five/index-five.component';
 import { IndexSixComponent } from './index-six/index-six.component';
 import { IndexComponent } from './index/index.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { FooterComponent } from './footer/footer.component';
+import { AproposComponent } from './apropos/apropos.component';
+import { BanqueComponent } from './banque/banque.component';
+import { TrouverbanqueComponent } from './trouverbanque/trouverbanque.component';
+import { BlogComponent } from './blog/blog.component';
+import { ContactComponent } from './contact/contact.component';
 
 const icons = {
   Menu, ArrowUp, User, Play
@@ -30,7 +37,14 @@ const icons = {
     IndexFourComponent,
     IndexFiveComponent,
     IndexSixComponent,
-    IndexComponent
+    IndexComponent,
+    AccueilComponent,
+    FooterComponent,
+    AproposComponent,
+    BanqueComponent,
+    TrouverbanqueComponent,
+    BlogComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,

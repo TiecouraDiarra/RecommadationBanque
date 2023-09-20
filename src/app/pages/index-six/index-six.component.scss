@@ -1,0 +1,19 @@
+/* Sélectionnez l'élément <a> dans la classe .nav-item */
+.nav-item a {
+    text-transform: capitalize;
+    /* Met la première lettre de chaque mot en majuscule */
+}
+
+.active-menu {
+    color: #ff0000;
+    /* Remplacez ceci par la couleur de votre choix */
+    /* Vous pouvez également ajouter d'autres styles de mise en forme ici si nécessaire */
+}
+
+
+.profile-userlink img {
+    margin-right: 6px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}

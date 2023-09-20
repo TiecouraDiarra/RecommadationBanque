@@ -49,6 +49,9 @@ export class IndexSixComponent implements OnInit {
     document.getElementById('navbarSupportedContent')?.classList.toggle('show');
   }
 
+  Profil() {
+    document.getElementById('AfficherProfil')?.classList.toggle('show');
+  }
   /**
    * Section changed method
    * @param sectionId specify the current sectionID

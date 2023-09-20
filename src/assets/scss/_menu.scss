@@ -22,12 +22,13 @@
                 font-family: $font-family-base;
                 padding-top: 12px;
                 padding-bottom: 12px;
+                text-transform: inherit;
             }
             &:hover,
             &:active,
             &.active {
                 .nav-link {
-                    background: -webkit-linear-gradient(45deg, $primary, $danger);
+                    background: -webkit-linear-gradient(45deg, $primary, $primary);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                 }
