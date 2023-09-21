@@ -13,6 +13,7 @@ import { BanqueComponent } from './banque/banque.component';
 import { TrouverbanqueComponent } from './trouverbanque/trouverbanque.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
+import { ProfilComponent } from './profil/profil.component';
 // import { ContactComponent } from '../shared/contact/contact.component';
 
 const routes: Routes = [
@@ -68,6 +69,11 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  }
+  ,
+  {
+    path: 'profil',
+    component: ProfilComponent
   }
 ];
 

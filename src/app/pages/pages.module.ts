@@ -25,6 +25,7 @@ import { BanqueComponent } from './banque/banque.component';
 import { TrouverbanqueComponent } from './trouverbanque/trouverbanque.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
+import { ProfilComponent } from './profil/profil.component';
 
 const icons = {
   Menu, ArrowUp, User, Play
@@ -44,7 +45,8 @@ const icons = {
     BanqueComponent,
     TrouverbanqueComponent,
     BlogComponent,
-    ContactComponent
+    ContactComponent,
+    ProfilComponent
   ],
   imports: [
     CommonModule,
