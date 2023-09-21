@@ -9,11 +9,13 @@ import { IndexFiveComponent } from './index-five/index-five.component';
 import { IndexSixComponent } from './index-six/index-six.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { AproposComponent } from './apropos/apropos.component';
-import { BanqueComponent } from './banque/banque.component';
-import { TrouverbanqueComponent } from './trouverbanque/trouverbanque.component';
+// import { BanqueComponent } from './detailbanque/detailbanque.component';
+// import { TrouverbanqueComponent } from './trouverbanque/trouverbanque.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProfilComponent } from './profil/profil.component';
+import { ComparateurbanqueComponent } from './comparateurbanque/comparateurbanque.component';
+import { DetailbanqueComponent } from './detailbanque/detailbanque.component';
 // import { ContactComponent } from '../shared/contact/contact.component';
 
 const routes: Routes = [
@@ -55,13 +57,13 @@ const routes: Routes = [
     component: AproposComponent
   },
   {
-    path: 'banque',
-    component: BanqueComponent
+    path: 'detail-banque',
+    component: DetailbanqueComponent
   },
-  {
-    path: 'trouverbanque',
-    component: TrouverbanqueComponent
-  },
+  // {
+  //   path: 'trouverbanque',
+  //   component: TrouverbanqueComponent
+  // },
   {
     path: 'blog',
     component: BlogComponent
@@ -74,6 +76,10 @@ const routes: Routes = [
   {
     path: 'profil',
     component: ProfilComponent
+  },
+  {
+    path: 'comparateur-banque',
+    component: ComparateurbanqueComponent
   }
 ];
 

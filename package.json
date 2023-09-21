@@ -25,6 +25,7 @@
     "@popperjs/core": "^2.10.2",
     "angular-feather": "^6.5.0",
     "bootstrap": "^5.2.2",
+    "font-awesome": "^4.7.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "typed.js": "^2.0.12",

@@ -12,7 +12,7 @@ $value in $colors {
         background: linear-gradient(45deg, $value, $light) !important;
         color: $white !important;
         box-shadow: 0 3px 5px 0 rgba($value, 0.1);
-        border-image: linear-gradient(to right, $value, $danger) 1;
+        // border-image: linear-gradient(to right, $value, $danger) 1;
     }
 
     .btn-outline-#{$name} {

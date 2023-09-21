@@ -21,11 +21,12 @@ import { IndexComponent } from './index/index.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { FooterComponent } from './footer/footer.component';
 import { AproposComponent } from './apropos/apropos.component';
-import { BanqueComponent } from './banque/banque.component';
-import { TrouverbanqueComponent } from './trouverbanque/trouverbanque.component';
+import { DetailbanqueComponent } from './detailbanque/detailbanque.component';
+// import { TrouverbanqueComponent } from './trouverbanque/trouverbanque.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProfilComponent } from './profil/profil.component';
+import { ComparateurbanqueComponent } from './comparateurbanque/comparateurbanque.component';
 
 const icons = {
   Menu, ArrowUp, User, Play
@@ -42,11 +43,12 @@ const icons = {
     AccueilComponent,
     FooterComponent,
     AproposComponent,
-    BanqueComponent,
-    TrouverbanqueComponent,
+    DetailbanqueComponent,
+    // TrouverbanqueComponent,
     BlogComponent,
     ContactComponent,
-    ProfilComponent
+    ProfilComponent,
+    ComparateurbanqueComponent
   ],
   imports: [
     CommonModule,
