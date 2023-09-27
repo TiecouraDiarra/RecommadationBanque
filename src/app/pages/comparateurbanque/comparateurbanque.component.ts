@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comparateurbanque.component.scss']
 })
 export class ComparateurbanqueComponent implements OnInit {
-
+  // showSubmenu: boolean = false;
   constructor() { }
 
   ngOnInit(): void {

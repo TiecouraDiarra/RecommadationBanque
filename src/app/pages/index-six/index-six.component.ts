@@ -8,14 +8,15 @@ import Typed from 'typed.js/src/typed.js';
   styleUrls: ['./index-six.component.scss']
 })
 export class IndexSixComponent implements OnInit {
-  currentSection = 'home';
+  // currentSection = 'home';
+  
 
   constructor() { }
 
   ngOnInit(): void {
     const options = {
       strings: [
-        "Agency", "Software", "Technology", "Studio", "Webapps"],
+        "recommandations", "suggestions", "selections", "assurances"],
       typeSpeed: 100,
       backSpeed: 20,
       showCursor: false,
@@ -56,7 +57,7 @@ export class IndexSixComponent implements OnInit {
    * Section changed method
    * @param sectionId specify the current sectionID
    */
-  onSectionChange(sectionId: string) {
-    this.currentSection = sectionId;
-  }
+  // onSectionChange(sectionId: string) {
+  //   this.currentSection = sectionId;
+  // }
 }

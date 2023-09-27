@@ -27,6 +27,12 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProfilComponent } from './profil/profil.component';
 import { ComparateurbanqueComponent } from './comparateurbanque/comparateurbanque.component';
+import { OuverturecompteComponent } from './ouverturecompte/ouverturecompte.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FraisbancaireComponent } from './fraisbancaire/fraisbancaire.component';
+import { OffrebancaireComponent } from './offrebancaire/offrebancaire.component';
+import { TauxplacementComponent } from './tauxplacement/tauxplacement.component';
+import { BanqueligneComponent } from './banqueligne/banqueligne.component';
 
 const icons = {
   Menu, ArrowUp, User, Play
@@ -48,13 +54,20 @@ const icons = {
     BlogComponent,
     ContactComponent,
     ProfilComponent,
-    ComparateurbanqueComponent
+    ComparateurbanqueComponent,
+    OuverturecompteComponent,
+    FraisbancaireComponent,
+    OffrebancaireComponent,
+    TauxplacementComponent,
+    BanqueligneComponent
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
     RouterModule,
     SharedModule,
+    ReactiveFormsModule,
+    FormsModule,
     ScrollToModule.forRoot(),
     FeatherModule.pick(icons),
     NgbModalModule,

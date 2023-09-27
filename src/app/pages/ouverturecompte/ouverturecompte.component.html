@@ -1,0 +1,99 @@
+<app-index-six></app-index-six>
+<!-- Start -->
+<section class="section" id="price">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="lead text-center">Comparateurs de banques pour <span style="font-weight: bold;">Ouverture de
+                        compte</span>.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-md-offset-3">
+                <form [formGroup]="personalDetails" id="msform">
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                        <li [ngClass]="step >= 1 ? 'active' : 'inactive'">Type de compte</li>
+                        <li [ngClass]="step >= 2 ? 'active' : 'inactive'">Estimation salaire</li>
+                        <li [ngClass]="step == 3 ? 'active' : 'inactive'">Frequence</li>
+                        <li [ngClass]="step == 4 ? 'active' : 'inactive'">Carte</li>
+                    </ul>
+                    <!-- fieldsets -->
+
+                    <fieldset *ngIf="step == 1">
+                        <h4 class="fs-title">Selectionnez le type de compte</h4>
+                        <div class="container">
+                            <div class="row">
+                                <div class="paymentCont">
+                                    <div class="row paymentWrap">
+                                        <div class="btn-group paymentBtnGroup btn-group-justified"
+                                            data-toggle="buttons">
+                                            <label class="btn paymentMethod">
+                                                <div class="method visa"></div>
+                                                <!-- <input formControlName="phone" type="radio" checked> -->
+                                                <input formControlName="phone" type="radio" checked>
+                                            </label>
+                                            <label class="btn paymentMethod">
+                                                <div class="method master-card"></div>
+                                                <input type="radio">
+                                            </label>
+                                            <label class="btn paymentMethod">
+                                                <div class="method master-card"></div>
+                                                <input type="radio">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <input (click)="next()" type="button" name="next" class="next action-button" value="Suivant" />
+                    </fieldset>
+                </form>
+                <form [formGroup]="addressDetails" id="msform">
+                    <fieldset *ngIf="step == 2">
+                        <h4 class="fs-title">Estimation salaire</h4>
+                        <input type="text" formControlName="city" placeholder="Estimation de votre salaire" />
+                        <input (click)="previous()" type="button" name="previous"
+                            class="previous action-button-previous" value="Precedent" />
+                        <input (click)="next()" type="button" name="next" class="next action-button" value="Suivant" />
+                    </fieldset>
+                </form>
+                <form id="msform" [formGroup]="educationalDetails">
+                    <fieldset *ngIf="step == 3">
+                        <h4 class="fs-title">À quelle fréquence prévoyez-vous d'utiliser ce compte ?</h4>
+                        <label>
+                            <input type="radio" formControlName="frequency" value="quotidiennement" />
+                            Quotidiennement
+                        </label>
+                        <label>
+                            <input type="radio" formControlName="frequency" value="mensuellement" />
+                            Mensuellement
+                        </label>
+                        
+                        <!-- Boutons en bas -->
+                        <div class="button-container">
+                            <input (click)="previous()" type="button" name="previous"
+                                class="previous action-button-previous" value="Precedent" />
+                            <input (click)="next()" type="button" name="next" class="next action-button"
+                                value="Suivant" />
+                        </div>
+                    </fieldset>
+                </form>
+                <form id="msform">
+                    <fieldset *ngIf="step == 4">
+                        <h4 class="fs-title">Avez-vous besoin d'une carte de débit ou de crédit ?</h4>
+                        <input type="text" placeholder="Estimation de votre salaire" />
+                        <input (click)="previous()" type="button" name="previous"
+                            class="previous action-button-previous" value="Precedent" />
+                        <input (click)="submit()" type="submit" name="submit" class="submit action-button"
+                            value="Envoyer" />
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div><!--end container-->
+</section><!--end section-->
+<!-- End -->
+<app-footer></app-footer>

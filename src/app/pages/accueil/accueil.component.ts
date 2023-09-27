@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-accueil',
@@ -9,9 +10,13 @@ export class AccueilComponent implements OnInit {
 
   currentSection = 'home';
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
+  }
+
+  open(content: any) {
+    this.modalService.open(content, { size: 'lg' });
   }
   /**
    * Section changed method

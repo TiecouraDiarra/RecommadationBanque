@@ -14,3 +14,45 @@
 .me-2 {
     margin-right: .5rem!important;
 }
+
+.banquelogo-img {
+    /* Définissez la largeur et la hauteur du cadre */
+    width: 300px; /* Ajustez la largeur selon vos besoins */
+    // height: 200px; /* Ajustez la hauteur selon vos besoins */
+    overflow: hidden; /* Masque toute partie de l'image qui dépasse du cadre */
+}
+
+.banquelogo-img img {
+    /* Définissez la largeur de l'image sur 100% pour qu'elle s'adapte au cadre */
+    width: 100%;
+    /* Ajustez la hauteur sur auto pour conserver le rapport hauteur/largeur de l'image */
+    height: auto;
+    /* Assurez-vous que l'image est centrée dans le cadre */
+    display: block;
+    // margin: 0 auto;
+}
+
+.banque-img {
+    /* Définissez la largeur et la hauteur du cadre */
+    width: 250px; /* Ajustez la largeur selon vos besoins */
+    // height: 200px; /* Ajustez la hauteur selon vos besoins */
+    overflow: hidden; /* Masque toute partie de l'image qui dépasse du cadre */
+}
+
+.banque-img img {
+    /* Définissez la largeur de l'image sur 100% pour qu'elle s'adapte au cadre */
+    width: 100%;
+    /* Ajustez la hauteur sur auto pour conserver le rapport hauteur/largeur de l'image */
+    height: auto;
+    /* Assurez-vous que l'image est centrée dans le cadre */
+    display: block;
+    // margin: 0 auto;
+}
+
+.text-justify{
+    text-align: justify;
+}
+
+h6{
+    font-weight: 400 !important;
+}

@@ -24,10 +24,24 @@
                 <li class="nav-item">
                   <a routerLinkActive="active" class="nav-link" routerLink="/trouverbanque">Trouver une banque</a>
                 </li> -->
-                <li class="nav-item">
+                <li class="nav-item dropend has-arrow logged-item">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Comparateurs
+                        banque
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item crd" routerLink="/ouverture-compte">Ouverture de compte</a></li>
+                        <!-- <li><a class="dropdown-item crd" routerLink="/frais-bancaire">Frais bancaire</a></li> -->
+                        <!-- <li><a class="dropdown-item crd" routerLink="/offre-bancaire">Offres bancaires</a></li> -->
+                        <li><a class="dropdown-item crd" routerLink="/taux-placement">Taux de placement</a></li>
+                        <!-- <li><a class="dropdown-item crd" routerLink="/banque-ligne">Banque en ligne</a></li> -->
+                    </ul>
+                </li>
+                <!-- <li class="nav-item">
                     <a routerLinkActive="active" class="nav-link" routerLink="/comparateur-banque">Comparateurs
                         banque</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a routerLinkActive="active" class="nav-link" routerLink="/blog">Blogs</a>
                 </li>
@@ -46,7 +60,7 @@
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- <a class="dropdown-item">Dashboard</a> -->
                         <a class="dropdown-item" routerLink="/profil">Profil</a>
-                        <a class="dropdown-item crd">Déconnexion</a>
+                        <a class="dropdown-item crd" routerLink="/auth/login">Déconnexion</a>
                     </div>
                 </li>
             </ul>
