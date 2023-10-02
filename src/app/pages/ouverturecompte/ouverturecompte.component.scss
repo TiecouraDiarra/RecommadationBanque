@@ -29,8 +29,21 @@
 }
 
 /*inputs*/
-#msform input,
-#msform textarea {
+// #msform input,
+// #msform textarea {
+//     padding: 15px;
+//     border: 1px solid #ccc;
+//     border-radius: 0px;
+//     margin-bottom: 10px;
+//     width: 100%;
+//     box-sizing: border-box;
+//     font-family: montserrat;
+//     color: #2C3E50;
+//     font-size: 13px;
+// }
+
+#msform .esti,
+#msform textarea{
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 0px;
@@ -303,5 +316,11 @@ fieldset {
 .paymentWrap .paymentBtnGroup .paymentMethod .method:hover {
 	border-color: #4cd264;
 	outline: none !important;
+}
+
+/* Ajoutez ces styles CSS pour mettre une bordure au bouton radio sélectionné */
+.paymentMethod input[type="radio"]:checked {
+    border: 2px solid #4cd264;
+    outline: none !important;
 }
 

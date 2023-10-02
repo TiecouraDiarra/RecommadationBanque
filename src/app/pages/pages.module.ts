@@ -29,8 +29,8 @@ import { ProfilComponent } from './profil/profil.component';
 import { ComparateurbanqueComponent } from './comparateurbanque/comparateurbanque.component';
 import { OuverturecompteComponent } from './ouverturecompte/ouverturecompte.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FraisbancaireComponent } from './fraisbancaire/fraisbancaire.component';
-import { OffrebancaireComponent } from './offrebancaire/offrebancaire.component';
+import { BanquesComponent } from './banques/banques.component';
+import { MesBanquesComponent } from './mes-banques/mes-banques.component';
 import { TauxplacementComponent } from './tauxplacement/tauxplacement.component';
 import { BanqueligneComponent } from './banqueligne/banqueligne.component';
 
@@ -56,8 +56,8 @@ const icons = {
     ProfilComponent,
     ComparateurbanqueComponent,
     OuverturecompteComponent,
-    FraisbancaireComponent,
-    OffrebancaireComponent,
+    BanquesComponent,
+    MesBanquesComponent,
     TauxplacementComponent,
     BanqueligneComponent
   ],

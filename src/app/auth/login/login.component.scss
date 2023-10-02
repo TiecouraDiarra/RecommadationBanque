@@ -3,3 +3,37 @@
     top: 4%; /* Ajustez la valeur en fonction de la distance depuis le haut */
     left: 5%; /* Ajustez la valeur en fonction de la distance depuis la gauche */
 }
+
+.connect{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.connect1{
+    // border: 1px solid red;
+    border-radius: 15px;
+    margin-top: 8% !important;
+    margin: 2%;
+    height: 90% !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.connectImg{
+    height: 70vh !important;
+    margin-top: auto;
+    margin-bottom: auto;
+    // background-color: #61A1FE;
+    border-radius: 15px;
+}
+.connectForm{
+    height: 70% !important;
+
+}
+
+.tout{
+//  background-image: url('../../../assets/images/0509-3.jpg');
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-color: red;
+}

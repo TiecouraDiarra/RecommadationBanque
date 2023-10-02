@@ -15,8 +15,9 @@
                     <ul id="progressbar">
                         <li [ngClass]="step >= 1 ? 'active' : 'inactive'">Type de compte</li>
                         <li [ngClass]="step >= 2 ? 'active' : 'inactive'">Estimation salaire</li>
-                        <li [ngClass]="step == 3 ? 'active' : 'inactive'">Frequence</li>
-                        <li [ngClass]="step == 4 ? 'active' : 'inactive'">Carte</li>
+                        <li [ngClass]="step >= 3 ? 'active' : 'inactive'">Frequence</li>
+                        <li [ngClass]="step >= 4 ? 'active' : 'inactive'">Test</li>
+                        <li [ngClass]="step >= 5 ? 'active' : 'inactive'">Carte</li>
                     </ul>
                     <!-- fieldsets -->
 
@@ -26,20 +27,21 @@
                             <div class="row">
                                 <div class="paymentCont">
                                     <div class="row paymentWrap">
-                                        <div class="btn-group paymentBtnGroup btn-group-justified"
-                                            data-toggle="buttons">
+                                        <div class="form-check btn-group paymentBtnGroup btn-group-justified">
                                             <label class="btn paymentMethod">
                                                 <div class="method visa"></div>
-                                                <!-- <input formControlName="phone" type="radio" checked> -->
-                                                <input formControlName="phone" type="radio" checked>
+                                                <input formControlName="phone" class="form-check-input" type="radio"
+                                                    name="flexRadioDefault" id="flexRadioDefault1" checked>
                                             </label>
                                             <label class="btn paymentMethod">
                                                 <div class="method master-card"></div>
-                                                <input type="radio">
+                                                <input class="form-check-input" name="flexRadioDefault"
+                                                    id="flexRadioDefault2" type="radio">
                                             </label>
                                             <label class="btn paymentMethod">
                                                 <div class="method master-card"></div>
-                                                <input type="radio">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault3">
                                             </label>
                                         </div>
                                     </div>
@@ -53,24 +55,49 @@
                 <form [formGroup]="addressDetails" id="msform">
                     <fieldset *ngIf="step == 2">
                         <h4 class="fs-title">Estimation salaire</h4>
-                        <input type="text" formControlName="city" placeholder="Estimation de votre salaire" />
+                        <input class="esti" type="text" formControlName="city"
+                            placeholder="Estimation de votre salaire" />
                         <input (click)="previous()" type="button" name="previous"
                             class="previous action-button-previous" value="Precedent" />
                         <input (click)="next()" type="button" name="next" class="next action-button" value="Suivant" />
                     </fieldset>
                 </form>
-                <form id="msform" [formGroup]="educationalDetails">
+                <form [formGroup]="educationalDetails"  id="msform">
                     <fieldset *ngIf="step == 3">
                         <h4 class="fs-title">À quelle fréquence prévoyez-vous d'utiliser ce compte ?</h4>
-                        <label>
-                            <input type="radio" formControlName="frequency" value="quotidiennement" />
-                            Quotidiennement
-                        </label>
-                        <label>
-                            <input type="radio" formControlName="frequency" value="mensuellement" />
-                            Mensuellement
-                        </label>
-                        
+                        <div class="row" >
+                            <!-- <div class="">
+                                <input formControlName="university" class="form-check-input mr-3" type="radio" name="flexRadioDefault" id="flexRadioDefault1">&nbsp;&nbsp;<span>Test</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                
+                                <input  class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>&nbsp;&nbsp;<span>Test</span>
+                            </div> -->
+                            <input class="esti" type="text" formControlName="university"
+                            placeholder="Estimation de votre salaire" />
+                           
+                        </div>                        
+
+                        <!-- Boutons en bas -->
+                        <div class="button-container">
+                            <input (click)="previous()" type="button" name="previous"
+                                class="previous action-button-previous" value="Precedent" />
+                            <input (click)="next()" type="button" name="next" class="next action-button"
+                                value="Suivant" />
+                        </div>
+                    </fieldset>
+                </form>
+                <form [formGroup]="testDetails"  id="msform">
+                    <fieldset *ngIf="step == 4">
+                        <h4 class="fs-title">Testt</h4>
+                        <div class="row" >
+                            <!-- <div class="">
+                                <input formControlName="university" class="form-check-input mr-3" type="radio" name="flexRadioDefault" id="flexRadioDefault1">&nbsp;&nbsp;<span>Test</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                
+                                <input  class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>&nbsp;&nbsp;<span>Test</span>
+                            </div> -->
+                            <input class="esti" type="text" formControlName="test"
+                            placeholder="Test" />
+                           
+                        </div>                        
                         <!-- Boutons en bas -->
                         <div class="button-container">
                             <input (click)="previous()" type="button" name="previous"
@@ -81,9 +108,9 @@
                     </fieldset>
                 </form>
                 <form id="msform">
-                    <fieldset *ngIf="step == 4">
+                    <fieldset *ngIf="step == 5">
                         <h4 class="fs-title">Avez-vous besoin d'une carte de débit ou de crédit ?</h4>
-                        <input type="text" placeholder="Estimation de votre salaire" />
+                        <input class="esti" type="text" placeholder="Estimation de votre salaire" />
                         <input (click)="previous()" type="button" name="previous"
                             class="previous action-button-previous" value="Precedent" />
                         <input (click)="submit()" type="submit" name="submit" class="submit action-button"

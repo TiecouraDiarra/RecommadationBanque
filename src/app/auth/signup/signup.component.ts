@@ -53,6 +53,9 @@ export class SignupComponent implements OnInit {
   iconLogleC() {
     this.ToggledataC = !this.ToggledataC;
   }
+  togglePassword() {
+    this.Toggledata = !this.Toggledata;
+}
 
   //METHODE PERMETTANT DE S'INSCRIRE
   inscription(): void {

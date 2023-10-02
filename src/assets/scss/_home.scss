@@ -155,7 +155,7 @@
 
 //Cover Home
 .auth-hero {
-    min-height: 100vh;
+    // min-height: 100vh;
     @media (max-width: 768px) {
         min-height: 0;
         .my-lg-auto {
@@ -183,8 +183,8 @@
         }
     }    
     .cover-user-img {
-        height: 100vh;
-        width: 80%;
+        // height: 100vh;
+        width: 100%;
 
         @media (min-width: 1025px) {
             padding: 0px 5%;

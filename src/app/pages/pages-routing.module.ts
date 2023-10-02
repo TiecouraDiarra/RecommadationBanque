@@ -17,8 +17,8 @@ import { ProfilComponent } from './profil/profil.component';
 import { ComparateurbanqueComponent } from './comparateurbanque/comparateurbanque.component';
 import { DetailbanqueComponent } from './detailbanque/detailbanque.component';
 import { OuverturecompteComponent } from './ouverturecompte/ouverturecompte.component';
-import { FraisbancaireComponent } from './fraisbancaire/fraisbancaire.component';
-import { OffrebancaireComponent } from './offrebancaire/offrebancaire.component';
+import { BanquesComponent } from './banques/banques.component';
+import { MesBanquesComponent } from './mes-banques/mes-banques.component';
 import { TauxplacementComponent } from './tauxplacement/tauxplacement.component';
 import { BanqueligneComponent } from './banqueligne/banqueligne.component';
 // import { ContactComponent } from '../shared/contact/contact.component';
@@ -92,12 +92,12 @@ const routes: Routes = [
     component: OuverturecompteComponent
   },
   {
-    path: 'frais-bancaire',
-    component: FraisbancaireComponent
+    path: 'banques',
+    component: BanquesComponent
   },
   {
-    path: 'offre-bancaire',
-    component: OffrebancaireComponent
+    path: 'mes-banques',
+    component: MesBanquesComponent
   },
   {
     path: 'taux-placement',
