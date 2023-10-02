@@ -9,7 +9,7 @@
 @each $name,
 $value in $colors {
     .btn-#{$name} {
-        background: linear-gradient(45deg, $value, $light) !important;
+        // background: linear-gradient(45deg, $value, $light) !important;
         color: $white !important;
         box-shadow: 0 3px 5px 0 rgba($value, 0.1);
         // border-image: linear-gradient(to right, $value, $danger) 1;
@@ -215,9 +215,9 @@ button:not(:disabled) {
     font-size: 16px;
     line-height: 30px;
     background-color: $white;
-    border-radius: 30px;
+    border-radius: 10px;
     &:focus {
-        border-image: linear-gradient(to right, $primary, $danger) 1;
+        // border-image: linear-gradient(to right, $primary, $danger) 1;
         box-shadow: none;
     }
     &[readonly] {
@@ -235,12 +235,12 @@ textarea {
 .form-check-input {
     border: 1px solid $gray-300;
     &:focus {
-        border-image: linear-gradient(to right, $primary, $danger) 1;
+        // border-image: linear-gradient(to right, $primary, $danger) 1;
         box-shadow: none;
     }
     &.form-check-input:checked {
-        background: linear-gradient(45deg, $primary, $light) !important;
-        border-image: linear-gradient(to right, $primary, $danger) 1;
+        // background: linear-gradient(45deg, $primary, $light) !important;
+        // border-image: linear-gradient(to right, $primary, $danger) 1;
     }
 }
 

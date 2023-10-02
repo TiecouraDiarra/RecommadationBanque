@@ -1,11 +1,16 @@
 <div class="back-to-home">
-    <a href="javascript:void(0);" routerLink="/accueil" class="back-button btn btn-icon btn-primary btn-pills border-0"><i class="uil uil-arrow-left"></i></a>
+    <a href="javascript:void(0);" routerLink="/accueil"
+        class="back-button btn btn-icon btn-primary btn-pills border-0"><i class="uil uil-arrow-left"></i></a>
 </div>
 <!-- Hero Start -->
 <section class="cover-user bg-white">
     <div class="container-fluid px-0">
-        <div class="row g-0 position-relative">
-            <div class="col-lg-4 cover-my-30 order-2">
+        <div class="row">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+             <img style="opacity: 0.8; max-width: 100%; height: auto;" src="assets/images/0509-3.jpg" alt="Description de l'image" class="img-fluid">
+            </div>
+            <!-- end col -->
+            <div class="col-lg-6">
                 <div class="cover-user-img d-flex align-items-center">
                     <div class="row">
                         <div class="col-12">
@@ -16,54 +21,78 @@
                                 <div class="title-heading my-lg-auto">
                                     <div class="card login-page border-0" style="z-index: 1">
                                         <div class="card-body p-0">
-                                            <h4 class="card-title text-center">Connexion</h4>  
-                                            <form class="login-form mt-4">
+                                            <h4 class="card-title text-center">Connexion</h4>
+                                            <form class="login-form mt-4" (ngSubmit)="seConnecter(f)" #f="ngForm">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="mb-3">
-                                                            <label class="form-label">Votre Email <span class="text-danger">*</span></label>
-                                                            <input type="email" class="form-control" placeholder="Email" name="email" required="">
+                                                            <label class="form-label">Votre Email <span
+                                                                    class="text-danger">*</span></label>
+                                                            <input [(ngModel)]="form.email" type="email"
+                                                                class="form-control" placeholder="Email" name="email"
+                                                                required="">
                                                         </div>
                                                     </div><!--end col-->
-        
+
                                                     <div class="col-lg-12">
-                                                        <div class="mb-3">
+                                                        <div class="mb-3 position-relative">
                                                             <label class="form-label">Votre mot de passe <span class="text-danger">*</span></label>
-                                                            <input type="password" class="form-control" placeholder="Mot de passe" required="">
+                                                            <div style="position: relative;">
+                                                                <input type="{{ Toggledata ? 'password' : 'text' }}" class="form-control" name="password"
+                                                                    placeholder="Mot de passe" [(ngModel)]="form.password" required>
+                                                                <span class="toggle-password uil uil-eye" [ngClass]="
+                                                                      Toggledata == true
+                                                                        ? 'toggle-password uil-eye-slash'
+                                                                        : 'toggle-password uil-eye'
+                                                                    " (click)="iconLogle()" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;"></span>
+                                                            </div>
                                                         </div>
                                                     </div><!--end col-->
-        
+
                                                     <div class="col-lg-12">
                                                         <div class="d-flex justify-content-between">
-                                                            <div class="mb-3">
-                                                                <label class="form-check-label" style="font-size: 13px;">Se souvenir de moi</label>
+                                                            <div class="form-check mb-3">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        id="flexCheckDefault">
+                                                                <label class="form-check-label"
+                                                                    style="font-size: 13px;">Se souvenir de moi</label>
                                                             </div>
-                                                            <p style="font-size: 13px;" class="forgot-pass mb-0"><a href="javascript:void(0);" routerLink="/auth/reset-password" class="text-dark fw-semibold">Mot de passe oublie ?</a></p>
+                                                            <p style="font-size: 13px;" class="forgot-pass mb-0"><a
+                                                                    href="javascript:void(0);"
+                                                                    routerLink="/auth/mot-passe-oublie"
+                                                                    class="text-dark fw-semibold">Mot de passe oublie
+                                                                    ?</a></p>
                                                         </div>
                                                     </div><!--end col-->
 
                                                     <div class="col-lg-12 mb-0">
-                                                        <button (click)="path()" class="btn btn-primary btn-pills border-0 w-100" style="font-weight: bold;">Connexion</button>
+                                                        <button
+                                                            [disabled]="!form.email || form.email.trim() === '' || !form.password || form.password.trim() === ''"
+                                                            class="btn btn-primary btn-pills border-0 w-100"
+                                                            style="font-weight: bold;">Connexion</button>
                                                     </div><!--end col-->
 
                                                     <div class="col-12">
-                                                        <p class="mb-0 mt-3 text-center"><small class="text-dark me-2">Pas de compte ?</small> <a href="javascript:void(0);" routerLink="/auth/signup" class="text-dark fw-semibold">Inscription</a></p>
+                                                        <p class="mb-0 mt-3 text-center"><small
+                                                                class="text-dark me-2">Pas de compte ?</small> <a
+                                                                href="javascript:void(0);" routerLink="/auth/signup"
+                                                                class="text-dark fw-semibold">Inscription</a></p>
                                                     </div><!--end col-->
                                                 </div><!--end row-->
                                             </form>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="mb-md-5 text-center">
+                                <!-- <div class="mb-md-5 text-center">
                                     <p class="mb-0 text-muted">© {{year}} Valexy. Design with <i class="mdi mdi-heart text-danger"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
-                                </div>
+                                </div> -->
                             </div>
                         </div><!--end col-->
                     </div><!--end row-->
                 </div> <!-- end about detail -->
-            </div> <!-- end col -->    
+            </div> <!-- end col -->
 
-            <div class="col-lg-8 offset-lg-4 padding-less img order-1" style="background-image:url('assets/images/bg-3.jpg')"></div><!-- end col -->    
+
         </div><!--end row-->
     </div><!--end container fluid-->
 </section><!--end section-->

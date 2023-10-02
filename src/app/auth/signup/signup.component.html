@@ -1,11 +1,17 @@
 <div class="back-to-home">
-    <a routerLink="/auth/login" class="back-button btn btn-icon btn-primary btn-pills border-0"><i class="uil uil-arrow-left"></i></a>
+    <a routerLink="/auth/login" class="back-button btn btn-icon btn-primary btn-pills border-0"><i
+            class="uil uil-arrow-left"></i></a>
 </div>
 <!-- Hero Start -->
 <section class="cover-user bg-white">
     <div class="container-fluid px-0">
-        <div class="row g-0 position-relative">
-            <div class="col-lg-4 cover-my-30 order-2">
+        <div class="row">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <img style="opacity: 0.8; max-width: 100%; height: auto;" src="assets/images/0509-3.jpg"
+                    alt="Description de l'image" class="img-fluid">
+            </div>
+            <!-- end col -->
+            <div class="col-lg-6">
                 <div class="cover-user-img d-flex align-items-center">
                     <div class="row">
                         <div class="col-12">
@@ -21,50 +27,98 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
-                                                            <label class="form-label">Votre nom <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" placeholder="Nom" name="s" required="">
+                                                            <label class="form-label">Votre nom <span
+                                                                    class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Nom"
+                                                                name="nom" [(ngModel)]="form.nom" required="">
                                                         </div>
                                                     </div><!--end col-->
 
                                                     <div class="col-md-6">
-                                                        <div class="mb-3"> 
-                                                            <label class="form-label">Votre prenom <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" placeholder="Prenom" name="s" required="">
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Votre prenom <span
+                                                                    class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Prenom"
+                                                                name="prenom" [(ngModel)]="form.prenom" required="">
                                                         </div>
                                                     </div><!--end col-->
 
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-6">
                                                         <div class="mb-3">
-                                                            <label class="form-label">Votre Email <span class="text-danger">*</span></label>
-                                                            <input type="email" class="form-control" placeholder="Email" name="email" required="">
+                                                            <label class="form-label">Votre Email <span
+                                                                    class="text-danger">*</span></label>
+                                                            <input type="email" class="form-control" placeholder="Email"
+                                                                name="email" [(ngModel)]="form.email" required="">
                                                         </div>
                                                     </div><!--end col-->
 
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-6">
                                                         <div class="mb-3">
+                                                            <label class="form-label">Type Utilisateur <span
+                                                                    class="text-danger">*</span></label>
+                                                            <select class="form-control" [(ngModel)]="form.roles"
+                                                                name="roles">
+                                                                <option *ngFor="let item of typeUser" [value]="item">
+                                                                    {{ item }}
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div><!--end col-->
+
+                                                    <div class="col-md-6">
+                                                        <div class="pass-group group-img mb-3" style="position: relative;">
                                                             <label class="form-label">Votre mot de passe <span class="text-danger">*</span></label>
-                                                            <input type="password" class="form-control" placeholder="Mot de passe" required="">
+                                                            <div style="position: relative;">
+                                                                <input type="{{ Toggledata ? 'password' : 'text' }}" class="form-control" name="password"
+                                                                    placeholder="Mot de passe" [(ngModel)]="form.password" required>
+                                                                <span class="toggle-password uil uil-eye" [ngClass]="
+                                                                      Toggledata == true
+                                                                        ? 'toggle-password uil-eye-slash'
+                                                                        : 'toggle-password uil-eye'
+                                                                    " (click)="iconLogle()" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;"></span>
+                                                            </div>
+                                                        </div>                                                        
+                                                    </div><!--end col-->
+                                                    <div class="col-md-6">
+                                                        <div class="pass-group group-img mb-3">
+                                                            <label class="form-label">Confirmer le mot de passe <span
+                                                                    class="text-danger">*</span></label>
+                                                            <input type="password" [(ngModel)]="form.confirmPassword"
+                                                                name="password" class="form-control"
+                                                                placeholder="Confirmeration"
+                                                                [type]="ToggledataC ? 'password' : 'text'" required="">
+                                                            <span class="toggle-password uil uil-eye"
+                                                                [ngClass]="ToggledataC == true ? 'toggle-password uil-eye-slash': 'toggle-password uil-eye'"
+                                                                (click)="iconLogleC()" style="position: absolute; top: 60%; right: 20px; transform: translateY(-50%); cursor: pointer;"></span>
                                                         </div>
                                                     </div><!--end col-->
 
                                                     <div class="col-md-12">
                                                         <div class="mb-3">
                                                             <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                                <label class="form-check-label" >J'accepte <a href="#" class="text-primary">tous les termes et conditions</a></label>
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="flexCheckDefault">
+                                                                <label class="form-check-label">J'accepte <a href="#"
+                                                                        class="text-primary">tous les termes et
+                                                                        conditions</a></label>
                                                             </div>
                                                         </div>
                                                     </div><!--end col-->
 
                                                     <div class="col-md-12">
-                                                        <button class="btn btn-primary btn-pills border-0 w-100">S'inscrire</button>
+                                                        <button (click)="inscription()"
+                                                            [disabled]="!form.roles || form.roles.trim() === '' || !form.nom || form.nom.trim() === '' || !form.prenom || form.prenom.trim() === '' || !form.email || form.email.trim() === '' || !form.password || form.password.trim() === '' || !form.confirmPassword || form.confirmPassword.trim() === ''"
+                                                            class="btn btn-primary btn-pills border-0 w-100"
+                                                            style="font-weight: bold;">S'inscrire</button>
                                                     </div><!--end col-->
 
-                                                    <div class="mx-auto">
-                                                        <p class="mb-0 mt-3"><small class="text-dark me-2">Vous avez déjà un compte ?</small> <a routerLink="/auth/login" class="text-dark fw-bold">S'identifier</a></p>
+                                                    <div class="mx-auto text-center">
+                                                        <p class="mb-0 mt-3"><small class="text-dark me-2">Vous avez
+                                                                déjà un compte ?</small> <a routerLink="/auth/login"
+                                                                class="text-dark fw-bold">S'identifier</a></p>
                                                     </div>
                                                 </div><!--end row-->
-                                            </form>  
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -75,9 +129,7 @@
                         </div><!--end col-->
                     </div><!--end row-->
                 </div> <!-- end about detail -->
-            </div> <!-- end col -->    
-
-            <div class="col-lg-8 offset-lg-4 padding-less img order-1" style="background-image:url('assets/images/bg.jpg')" data-jarallax='{"speed": 0.5}'></div><!-- end col -->    
+            </div> <!-- end col -->
         </div><!--end row-->
     </div><!--end container fluid-->
 </section><!--end section-->
