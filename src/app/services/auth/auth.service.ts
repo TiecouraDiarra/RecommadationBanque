@@ -30,8 +30,10 @@ export class AuthService {
 
   //METHODE PERMETTANT DE SE CONNECTER
   connexion(email: string, password: string): Observable<any> {
+    console.log(email);
+    console.log(password);
     return this.http.post(
-      URL_BASE + '/login',
+      URL_BASE + 'auth/api/login/',
       {
         email,
         password,

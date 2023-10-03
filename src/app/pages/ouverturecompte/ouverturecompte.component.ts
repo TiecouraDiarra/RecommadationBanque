@@ -133,7 +133,7 @@ export class OuverturecompteComponent implements OnInit {
       })
 
       swalWithBootstrapButtons.fire({
-        text: "Etes-vous sûre de creer un compte ?",
+        text: "Etes-vous sûre de faire cette recherche ?",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Confirmer',

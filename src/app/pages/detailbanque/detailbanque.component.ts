@@ -8,6 +8,8 @@ declare var google: any;
 })
 export class DetailbanqueComponent implements OnInit, AfterViewInit {
 
+  selectedTab: string = 'home'; // Déclaration de la variable selectedTab avec la valeur par défaut 'home'
+  
   constructor() { }
 
   
@@ -35,8 +37,17 @@ export class DetailbanqueComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+  }
 
 
+  // Méthode pour changer l'onglet sélectionné
+  changeTab(tab: string) {
+    this.selectedTab = tab;
+  }
+
+  // Méthode pour vérifier si un onglet est actif
+  isTabActive(tab: string): boolean {
+    return this.selectedTab === tab;
   }
 
 }

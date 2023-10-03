@@ -11,96 +11,102 @@
     margin-bottom: 1.5rem;
     box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
 }
-.me-2 {
-    margin-right: .5rem!important;
+
+/*  Helper Styles */
+
+a {
+    text-decoration: none;
 }
 
-.profile-img {
-    text-align: center; /* Centre le contenu horizontalement */
-    position: relative; /* Permet de positionner l'icône de la caméra par rapport à l'image */
+/* Card Styles */
+
+.card-sl {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.profile-img img {
-    border: 3px solid #fff; /* Ajoute une bordure blanche autour de l'image */
-    border-radius: 50%; /* Arrondit les bords de l'image pour en faire un cercle */
-    width: 110px;
-    height: 110px;
+.card-image img {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 8px 8px 0px 0;
 }
 
-.change-photo-icon {
-    position: absolute; /* Positionne l'icône de la caméra par rapport à l'image */
-    bottom: 5px; /* Ajuste la position verticale de l'icône par rapport à l'image */
-    right: 5px; /* Ajuste la position horizontale de l'icône par rapport à l'image */
-    background-color: #fff; /* Fond blanc pour l'icône */
-    border-radius: 50%; /* Arrondit les bords de l'icône pour en faire un cercle */
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer; /* Change le curseur de la souris en pointeur au survol */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère */
-}
-
-/* Rend l'élément input transparent */
-.profile-img .file input {
-    position: absolute;
-    opacity: 0;
-    right: 0;
-    top: 0;
-    cursor: pointer;
-}
-
-.card {
+.card-action {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 0 solid transparent;
-    border-radius: .25rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
-}
-.me-2 {
-    margin-right: .5rem!important;
+    float: right;
+    margin-top: -25px;
+    margin-right: 20px;
+    z-index: 2;
+    color: #E26D5C;
+    background: #fff;
+    border-radius: 100%;
+    padding: 10px;
+    font-size: 15px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
 }
 
-.profile-img {
-    text-align: center; /* Centre le contenu horizontalement */
-    position: relative; /* Permet de positionner l'icône de la caméra par rapport à l'image */
+.card-action:hover {
+    color: #fff;
+    background: #E26D5C;
+    -webkit-animation: pulse 1.5s infinite;
 }
 
-.profile-img img {
-    border: 3px solid #fff; /* Ajoute une bordure blanche autour de l'image */
-    border-radius: 50%; /* Arrondit les bords de l'image pour en faire un cercle */
-    width: 110px;
-    height: 110px;
+.card-heading {
+    font-size: 18px;
+    font-weight: bold;
+    background: #fff;
+    padding: 6px 8px;
+    
 }
 
-.change-photo-icon {
-    position: absolute; /* Positionne l'icône de la caméra par rapport à l'image */
-    bottom: 5px; /* Ajuste la position verticale de l'icône par rapport à l'image */
-    right: 5px; /* Ajuste la position horizontale de l'icône par rapport à l'image */
-    background-color: #fff; /* Fond blanc pour l'icône */
-    border-radius: 50%; /* Arrondit les bords de l'icône pour en faire un cercle */
-    width: 30px;
-    height: 30px;
+.card-text {
+    padding: 6px 8px;
+    background: #fff;
+    font-size: 14px;
+    color: #636262;
+    text-align: justify;
+}
+
+.card-button {
     display: flex;
     justify-content: center;
-    align-items: center;
-    cursor: pointer; /* Change le curseur de la souris en pointeur au survol */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère */
+    padding: 10px 0;
+    width: 100%;
+    background-color: #202942;
+    color: #fff;
+    border-radius: 0 0 8px 8px;
 }
 
-/* Rend l'élément input transparent */
-.profile-img .file input {
-    position: absolute;
-    opacity: 0;
-    right: 0;
-    top: 0;
-    cursor: pointer;
+.card-button:hover {
+    text-decoration: none;
+    background-color: #202942;
+    color: #fff;
+
+}
+
+
+@-webkit-keyframes pulse {
+    0% {
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    70% {
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+    }
+
+    100% {
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+    }
 }
 

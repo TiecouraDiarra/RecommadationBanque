@@ -41,6 +41,7 @@ export class ForgotPasswordComponent implements OnInit {
       );
     }, (error) => {
       const errorMessage = error.errorw && error.error.message ? error.error.message : 'Erreur inconnue';
+      
       swalWithBootstrapButtons.fire(
         "",
         `<h1 style='font-size: 1em !important; font-weight: bold; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;'>${errorMessage}</h1>`,

@@ -8,6 +8,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AproposComponent implements OnInit {
 
+  selectedTab: string = 'home';
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
@@ -17,5 +18,13 @@ export class AproposComponent implements OnInit {
     this.modalService.open(content, { size: 'lg' });
   }
 
+  // Méthode pour changer l'onglet sélectionné
+  changeTab(tab: string) {
+    this.selectedTab = tab;
+  }
 
+  // Méthode pour vérifier si un onglet est actif
+  isTabActive(tab: string): boolean {
+    return this.selectedTab === tab;
+  }
 }

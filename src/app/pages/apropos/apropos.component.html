@@ -2,144 +2,412 @@
 <!-- Start -->
 <section class="section bg-light overflow-hidden" id="about">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-5 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
-                <div class="position-relative">
-                    <img src="assets/images/about.png" class="rounded-md img-fluid mx-auto d-block" alt="">
-                    <div class="play-icon">
-                        <a href="javascript:void(0);" (click)="open(content)" data-type="youtube" data-id="yba7hPeTSjk"
-                            class="play-btn lightbox">
-                            <i class="mdi mdi-play text-primary rounded-circle bg-white shadow"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!--end col-->
 
-            <div class="col-lg-7 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
-                <div class="section-title ms-lg-5">
-                    <h4 class="title mb-4">Unlimited Possibilities. <br> 1st Class Templates.</h4>
-                    <p class="text-muted para-desc mb-0">This is just a simple text made for this unique and awesome
-                        template, you can replace it with any text.</p>
-
-                    <div class="d-inline-flex rounded-md shadow p-4 bg-white mt-4">
-                        <i class="uil uil-shop display-4 mb-0 opacity-5"></i>
-
-                        <div class="content ms-3">
-                            <h5>Open your own shop</h5>
-                            <p class="text-muted">This is just a simple text made <br> for this unique and awesome
-                                template</p>
-                            <a href="" class="btn btn-primary btn-pills border-0">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--end col-->
-        </div>
-        <!--end row-->
     </div>
     <!--end container-->
 
-    <div class="container mt-100 mt-60">
-        <div class="row align-items-center">
-            <div class="col-lg-6 order-2 order-lg-1 mt-4 pt-2 mt-lg-0 pt-lg-0">
-                <div class="section-title me-lg-4">
-                    <h1 class="title mb-3">Why Choose us ?</h1>
-                    <p class="para-desc text-muted">This is just a simple text made for this unique and awesome
-                        template, you can replace it with any text.</p>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="d-flex align-items-center pt-4">
-                                <i class="uil uil-pathfinder text-gradient-primary h2"></i>
-                                <div class="ms-3">
-                                    <h5>Fully Secured</h5>
-                                    <p class="text-muted mb-0">Moreover, in Latin only words at the beginning of
-                                        sentences are capitalized.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end col-->
-
-                        <div class="col-12">
-                            <div class="d-flex align-items-center pt-4">
-                                <i class="uil uil-bell text-gradient-primary h2"></i>
-                                <div class="ms-3">
-                                    <h5>Best Performance</h5>
-                                    <p class="text-muted mb-0">If the fill text is intended to illustrate the
-                                        characteristics of sometimes.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end col-->
-
-                        <div class="col-12 pt-4">
-                            <a href="" class="btn btn-outline-primary">Install Now <i
-                                    class="uil uil-arrow-right"></i></a>
-                        </div>
-                        <!--end col-->
-                    </div>
-                </div>
-            </div>
-            <!--end col-->
-
-            <div class="col-lg-6 order-1 order-lg-2">
-                <div class="laptop-image">
-                    <div class="position-relative">
-                        <img src="assets/images/laptop.png" class="mx-auto d-block" alt="">
-                    </div>
-                </div>
-            </div>
-            <!--end col-->
-        </div>
-        <!--end row-->
-    </div>
-    <!--end container-->
 </section>
 <!--end section-->
-<!-- End -->
-<ng-template #content let-c="close" let-d="dismiss">
-    <!-- <div class="modal-header">
-        <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
-    </div> -->
-    <div class="modal-body">
-        <iframe width="100%" height="450" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-        </iframe>
+
+<!-- ======= Info Box Section ======= -->
+<section class="info-box bg-light  py-0">
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+                <div class="content">
+                    <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                    </p>
+                </div>
+
+                <div class="accordion-list">
+                    <ul>
+                        <li>
+                            <a data-bs-toggle="collapse" class="collapse"
+                                data-bs-target="#accordion-list-1"><span>01</span> Non consectetur a erat nam at lectus
+                                urna duis? <i class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                                <p>
+                                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet
+                                    non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor
+                                    purus non.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2"
+                                class="collapsed"><span>02</span> Feugiat scelerisque varius morbi enim nunc? <i
+                                    class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                                <p>
+                                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
+                                    velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend
+                                    donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
+                                    cursus turpis massa tincidunt dui.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3"
+                                class="collapsed"><span>03</span> Dolor sit amet consectetur adipiscing elit? <i
+                                    class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                                <p>
+                                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
+                                    pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit.
+                                    Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis
+                                    tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
+                style="background-image: url(../../../assets/images/info-box.jpg);">&nbsp;</div>
+        </div>
+
     </div>
-</ng-template>
-<!-- Start -->
-<section class="section bg-gradient-primary">
+</section><!-- End Info Box Section -->
+
+<!-- ======= Our Services Section ======= -->
+<section id="services" class="services bg-light">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <div class="section-title text-center mb-4 pb-2">
-                    <h4 class="title text-white mb-4">Subscribe our Newsletter</h4>
-                    <p class="text-white-50 mx-auto para-desc mb-0">This is just a simple text made for this unique and
-                        awesome template, you can replace it with any text.</p>
-                </div>
-            </div>
-            <!--end col-->
 
-            <div class="col-lg-8">
-                <div class="text-center subcribe-form mt-4 pt-2">
-                    <form class="mx-auto">
-                        <div class="form-group mb-0">
-                            <input type="email" id="subscribe_email" name="email" class="rounded-pill"
-                                placeholder="Your Email Id">
-                            <button type="submit" class="btn btn-pills btn-primary border-0">Subscribe Now</button>
-                        </div>
-                    </form>
-                    <!--end form-->
-                </div>
-                <!--end subscribe form-->
-            </div>
-            <!--end col-->
+        <div class="section-title text-center">
+            <h2>Nos Services</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+                sit in iste officiis commodi quidem hic quas.</p>
         </div>
-        <!--end row-->
+
+        <div class="row mb-3">
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-lg-0">
+                <div class="icon-box">
+                    <div class="icon"><i class="uil uil-dribbble"></i></div>
+                    <h4 class="title"><a href="">Digital</a></h4>
+                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-lg-0">
+                <div class="icon-box">
+                    <div class="icon"><i class="uil uil-file"></i></div>
+                    <h4 class="title"><a href="">Data</a></h4>
+                    <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-lg-0">
+                <div class="icon-box">
+                    <div class="icon"><i class="uil uil-tachometer-fast"></i></div>
+                    <h4 class="title"><a href="">Solution</a></h4>
+                    <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <!--end container-->
-</section>
-<!--end section-->
+</section><!-- End Our Services Section -->
 <!-- End -->
+
+<!-- ======= Our Portfolio Section ======= -->
+<section id="portfolio" class="portfolio  bg-light section-bg">
+    <div class="container">
+
+        <div class="section-title text-center">
+            <h2>Our Portfolio</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+                sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <ul id="portfolio-flters">
+                    <li data-filter="*" class="filter-active">All</li>
+                    <li data-filter=".filter-app">App</li>
+                    <li data-filter=".filter-card">Card</li>
+                    <li data-filter=".filter-web">Web</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                    <img src="../../../assets/images/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>App 1</h4>
+                        <p>App</p>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="../../../assets/images/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="App 1"><i class="uil uil-plus"></i></a>
+                        <a href="portfolio-details.html" title="More Details"><i class="uil uil-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-wrap">
+                    <img src="../../../assets/images/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Web 3</h4>
+                        <p>Web</p>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="../../../assets/images/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Web 3"><i class="uil uil-plus"></i></a>
+                        <a href="portfolio-details.html" title="More Details"><i class="uil uil-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                    <img src="../../../assets/images/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>App 2</h4>
+                        <p>App</p>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="../../../assets/images/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="App 2"><i class="uil uil-plus"></i></a>
+                        <a href="portfolio-details.html" title="More Details"><i class="uil uil-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-wrap">
+                    <img src="../../../assets/images/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Card 2</h4>
+                        <p>Card</p>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="../../../assets/images/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Card 2"><i class="uil uil-plus"></i></a>
+                        <a href="portfolio-details.html" title="More Details"><i class="uil uillink"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-wrap">
+                    <img src="../../../assets/images/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Web 2</h4>
+                        <p>Web</p>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="../../../assets/images/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Web 2"><i class="uil uil-plus"></i></a>
+                        <a href="portfolio-details.html" title="More Details"><i class="uil uil-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                    <img src="../../../assets/images/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>App 3</h4>
+                        <p>App</p>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="../../../assets/images/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="App 3"><i class="uil uil-plus"></i></a>
+                        <a href="portfolio-details.html" title="More Details"><i class="uil uil-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-wrap">
+                    <img src="../../../assets/images/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Card 1</h4>
+                        <p>Card</p>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="../../../assets/images/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Card 1"><i class="uil uil-plus"></i></a>
+                        <a href="portfolio-details.html" title="More Details"><i class="uil uil-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-wrap">
+                    <img src="../../../assets/images/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Card 3</h4>
+                        <p>Card</p>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="../../../assets/images/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Card 3"><i class="uil uil-plus"></i></a>
+                        <a href="portfolio-details.html" title="More Details"><i class="uil uil-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-wrap">
+                    <img src="../../../assets/images/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Web 3</h4>
+                        <p>Web</p>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="../../../assets/images/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="Web 3"><i class="uil uil-plus"></i></a>
+                        <a href="portfolio-details.html" title="More Details"><i class="uil uil-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Our Portfolio Section -->
+
+<!-- ======= Our Team Section ======= -->
+<section id="team" class="team bg-light">
+    <div class="container">
+
+        <div class="section-title text-center">
+            <h2>Notre equipe</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+                sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="member">
+                    <img src="../../../assets/images/team/team-1.jpg" class="img-fluid" alt="">
+                    <div class="member-info">
+                        <div class="member-info-content">
+                            <h4>Walter White</h4>
+                            <span>Chief Executive Officer</span>
+                        </div>
+                        <div class="social">
+                            <a href=""><i class="uil uil-twitter"></i></a>
+                            <a href=""><i class="uil uil-facebook"></i></a>
+                            <a href=""><i class="uil uil-instagram"></i></a>
+                            <a href=""><i class="uil uil-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
+                <div class="member">
+                    <img src="../../../assets/images/team/team-2.jpg" class="img-fluid" alt="">
+                    <div class="member-info">
+                        <div class="member-info-content">
+                            <h4>Sarah Jhonson</h4>
+                            <span>Product Manager</span>
+                        </div>
+                        <div class="social">
+                            <a href=""><i class="uil uil-twitter"></i></a>
+                            <a href=""><i class="uil uil-facebook"></i></a>
+                            <a href=""><i class="uil uil-instagram"></i></a>
+                            <a href=""><i class="uil uil-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                <div class="member">
+                    <img src="../../../assets/images/team/team-3.jpg" class="img-fluid" alt="">
+                    <div class="member-info">
+                        <div class="member-info-content">
+                            <h4>William Anderson</h4>
+                            <span>CTO</span>
+                        </div>
+                        <div class="social">
+                            <a href=""><i class="uil uil-twitter"></i></a>
+                            <a href=""><i class="uil uil-facebook"></i></a>
+                            <a href=""><i class="uil uil-instagram"></i></a>
+                            <a href=""><i class="uil uil-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.3s">
+                <div class="member">
+                    <img src="../../../assets/images/team/team-4.jpg" class="img-fluid" alt="">
+                    <div class="member-info">
+                        <div class="member-info-content">
+                            <h4>Amanda Jepson</h4>
+                            <span>Accountant</span>
+                        </div>
+                        <div class="social">
+                            <a href=""><i class="uil uil-twitter"></i></a>
+                            <a href=""><i class="uil uil-facebook"></i></a>
+                            <a href=""><i class="uil uil-instagram"></i></a>
+                            <a href=""><i class="uil uil-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Our Team Section -->
 
 <app-footer></app-footer>
+
+<script>
+      /**
+   * Porfolio isotope and filter
+   */
+  window.addEventListener('load', () => {
+    let portfolioContainer = select('.portfolio-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows'
+      });
+
+      let portfolioFilters = select('#portfolio-flters li', true);
+
+      on('click', '#portfolio-flters li', function(e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+      }, true);
+    }
+
+  });
+</script>

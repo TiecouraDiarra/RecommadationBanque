@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { StorageService } from 'src/app/services/storage/storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -18,8 +19,8 @@ export class LoginComponent implements OnInit {
   showPassword = false;
 
   togglePassword() {
-  this.showPassword = !this.showPassword;
-}
+    this.showPassword = !this.showPassword;
+  }
 
 
   isLoggedIn = false;
@@ -42,11 +43,11 @@ export class LoginComponent implements OnInit {
       this.isLoggedIn = true;
       this.path();
     }
-   
+
   }
 
   path() {
-    this.router.navigate(["/index-six"]);
+    this.router.navigate(["/profil"]);
   }
 
   iconLogle() {
@@ -55,22 +56,32 @@ export class LoginComponent implements OnInit {
 
   seConnecter(form: NgForm): void {
     const { email, password } = this.form;
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: '',
+        cancelButton: '',
+      },
+      heightAuto: false
+    })
 
-    this.authService.connexion(email, password).subscribe({
-      next: (data) => {
+    this.authService.connexion(email, password).subscribe((data) =>  {
         this.storageService.saveUser(data);
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.storageService.getUser().roles;
         this.reloadPage();
-        // this.path();
-      },
-      error: (err) => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
-      },
-    });
+        this.path();
+    } , (error) => {
+      const errorMessage = error.errorw && error.error.message ? error.error.message : 'Erreur inconnue';
+      console.log(error);
+      swalWithBootstrapButtons.fire(
+        "",
+        `<h1 style='font-size: 1em !important; font-weight: bold; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;'>${errorMessage}</h1>`,
+        "error"
+      );
+      this.isLoginFailed = true;
+    },);
   }
 
   reloadPage(): void {
