@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { StorageService } from 'src/app/services/storage/storage.service';
@@ -29,8 +30,8 @@ export class SignupComponent implements OnInit {
   public Toggledata = true;
   public ToggledataC = true;
   form: any = {
-    nom: null,
-    prenom: null,
+    first_name: null,
+    last_name: null,
     email: null,
     password: null,
     confirmPassword: null,
@@ -55,10 +56,10 @@ export class SignupComponent implements OnInit {
   }
   togglePassword() {
     this.Toggledata = !this.Toggledata;
-}
+  }
 
   //METHODE PERMETTANT DE S'INSCRIRE
-  inscription(): void {
+  inscription(form: NgForm): void {
     if (this.form.password !== this.form.confirmPassword) {
       Swal.fire({
         text: "La confirmation du mot de passe ne correspond pas au nouveau mot de passe.",
@@ -67,7 +68,7 @@ export class SignupComponent implements OnInit {
       });
       return;
     }
-    const { nom, prenom, email, password, roles } = this.form;
+    const { first_name, last_name, email, password } = this.form;
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn',
@@ -75,67 +76,68 @@ export class SignupComponent implements OnInit {
       },
       heightAuto: false
     })
-    if (this.form.roles == "Choisir") {
-      Swal.fire({
-        text: "Veuillez choisir le type d'utilisateur!",
-        icon: 'warning',
-        confirmButtonText: 'OK'
-      });
-      return;
-    } else {
-      swalWithBootstrapButtons.fire({
-        text: "Etes-vous sûre de creer un compte ?",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Confirmer',
-        cancelButtonText: 'Annuler',
-        reverseButtons: true
-      }).then((result) => {
-        if (result.isConfirmed) {
-          this.authService.inscription(nom, prenom, email, password, roles).subscribe({
-            next: (data) => {
-              this.isSuccessful = true;
-              this.isSignUpFailed = false;
-              // this.popUpConfirmation();
-            },
-            error: (err) => {
-              this.errorMessage = err.error.message;
-              this.isSignUpFailed = true;
-            },
-          });
-        }
-      })
-    }
+    // if (this.form.roles == "Choisir") {
+    //   Swal.fire({
+    //     text: "Veuillez choisir le type d'utilisateur!",
+    //     icon: 'warning',
+    //     confirmButtonText: 'OK'
+    //   });
+    //   return;
+    // } else {
+    swalWithBootstrapButtons.fire({
+      text: "Etes-vous sûre de creer un compte ?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Confirmer',
+      cancelButtonText: 'Annuler',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.authService.inscription(first_name, last_name, email, password).subscribe((data) => {
+          this.isSuccessful = true;
+          this.isSignUpFailed = false;
+          this.popUpConfirmation();
+          console.log("Compte cree avec succes");
+          
+        }, (error) => {
+          // this.errorMessage = err.error.message;
+          console.log(error);
+
+          this.isSignUpFailed = true;
+        },);
+      };
+    })
   }
 
+
   //POPUP APRES CONFIRMATION
-  // popUpConfirmation() {
-  //   const messages = [
-  //     'Le compte a été envoyé avec succès.',
-  //     'Pour vous connecter, allez-y confirmer dans votre mail'
-  //   ];
-  //   const messageText = messages.join('\n');
+  popUpConfirmation() {
+    const messages = [
+      'Le compte a été envoyé avec succès.',
+      'Pour vous connecter, allez-y confirmer dans votre mail'
+    ];
+    const messageText = messages.join('\n');
 
-  //   Swal.fire({
-  //     position: 'center',
-  //     text: messageText,
-  //     title: 'Creation de compte',
-  //     icon: 'success',
-  //     heightAuto: false,
-  //     showConfirmButton: true,
-  //     confirmButtonText: "OK",
-  //     confirmButtonColor: '#0857b5',
-  //     showDenyButton: false,
-  //     showCancelButton: false,
-  //     allowOutsideClick: false,
+    Swal.fire({
+      position: 'center',
+      text: messageText,
+      title: 'Creation de compte',
+      icon: 'success',
+      heightAuto: false,
+      showConfirmButton: true,
+      confirmButtonText: "OK",
+      confirmButtonColor: '#0857b5',
+      showDenyButton: false,
+      showCancelButton: false,
+      allowOutsideClick: false,
 
-  //   }).then((result) => {
-  //     this.form.nom = '',
-  //       this.form.prenom = '',
-  //       this.form.email = '',
-  //       this.form.password = '',
-  //       this.form.confirmPassword = '',
-  //       this.form.roles = "Type d'Utilisateur",
-  //   })
-  // }
+    }).then((result) => {
+      this.form.first_name = '',
+      this.form.last_name = '',
+      this.form.email = '',
+      this.form.password = '',
+      this.form.confirmPassword = ''
+      // this.form.roles = "Choisir",
+    })
+  }
 }

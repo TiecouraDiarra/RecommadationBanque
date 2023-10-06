@@ -1,64 +1,93 @@
 <app-index-six></app-index-six>
-   <!-- Start -->
-   <section class="section bg-light" id="blog">
+<!-- Start -->
+<section class="section bg-light" id="blog">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 mb-4 pb-2">
+            <div class="col-12 pb-2">
                 <div class="section-title text-center">
                     <h4 class="title mb-4">Actualités <br> sur les banques</h4>
-                    <p class="text-muted para-desc mx-auto mb-0">This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+                    <p class="text-muted para-desc mx-auto mb-0">This is just a simple text made for this unique and
+                        awesome template, you can replace it with any text.</p>
                 </div>
             </div><!--end col-->
         </div><!--end row-->
-
-        
 
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                <div class="blog blog-primary">
-                    <img src="assets/images/blog-1.jpg" class="img-fluid rounded-md shadow" alt="">
-                    <div class="p-4 pb-0">
-                        <a href="" class="title text-dark h5 text-justify">Banque en ligne : BforBank dévoile une nouvelle offre et fait peau neuve !</a>
-
-                        <p class="text-truncate mt-3 mb-0 text-justify">BforBank, la banque en ligne du Crédit Agricole, souhaite conquérir une nouvelle clientèle, plus jeune. Elle a ainsi revu l’intégralité de son offre, de même que son identité visuelle. Décryptage.</p>
-
-                        <div class="mt-3">
-                            <a href="" class="btn btn-link primary">Savoir plus <i class="uil uil-arrow-right"></i></a>
+            <div class="container">
+                <div class="card" *ngFor="let BlogT of blogT">
+                    <div class="card__header">
+                        <img [src]="BlogT.img1" alt="card__image" class="card__image"
+                            width="600">
+                    </div>
+                    <div class="card__body">
+                        <span class="tag tag-blue">{{BlogT.banque}}</span>
+                        <h5 class="text-truncate">{{BlogT.titre}}</h5>
+                        <p class="text-truncate">{{BlogT.description}}</p>
+                    </div>
+                    <div class="card__footer">
+                        <div class="user profile-userlink">
+                            <img [src]="BlogT.imguser" alt="">
+                            <!-- <img src="https://i.pravatar.cc/40?img=1" alt="user__image" class="user__image"> -->
+                            <div class="user__info">
+                                <h5 style="margin-bottom: 0px;">{{BlogT.nomuser}}</h5>
+                                <small>{{BlogT.datecreation}}</small>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div><!--end col-->
-            
-            <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                <div class="blog blog-primary">
-                    <img src="assets/images/blog-2.jpg" class="img-fluid rounded-md shadow" alt="">
-                    <div class="p-4 pb-0">
-                        <a href="" class="title text-dark h5 text-justify">Le nombre d’utilisateurs des paiements mobiles en Mali a doublé</a>
-
-                        <p class="text-truncate mt-3 mb-0 text-justify">Le succès des paiements sans contact via un smartphone ne se dément pas. En effet, en seulement un an, cette méthode de paiement à la fois pratique et sécurisé a bondi de +137 %. Ce chiffre a été communiqué par l’Observatoire de la sécurité des moyens de paiement auprès de la Banque du Mali au quotidien Le Parisien.</p>
-
-                        <div class="mt-3">
-                            <a href="" class="btn btn-link primary">Savoir plus <i class="uil uil-arrow-right"></i></a>
+                <!-- <div class="card">
+                    <div class="card__header">
+                        <img src="https://source.unsplash.com/600x400/?food" alt="card__image" class="card__image"
+                            width="600">
+                    </div>
+                    <div class="card__body">
+                        <span class="tag tag-brown">BIM</span>
+                        <h5 class="text-truncate">Le nombre d’utilisateurs des paiements
+                            mobiles en Mali a doublé</h5>
+                        <p class="text-truncate">Le succès des paiements sans contact via un
+                            smartphone ne se dément pas. En effet, en seulement un an, cette méthode de paiement à la
+                            fois pratique et sécurisé a bondi de +137 %. Ce chiffre a été communiqué par l’Observatoire
+                            de la sécurité des moyens de paiement auprès de la Banque du Mali au quotidien Le Parisien.</p>
+                    </div>
+                    <div class="card__footer">
+                        <div class="user profile-userlink">
+                            <img src="../../../assets/images/client/01.jpg" alt="">
+                            <div class="user__info">
+                                <h5 style="margin-bottom: 0px;">Admin</h5>
+                                <small>21 Sept. 2023</small>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div><!--end col-->
-            
-            <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                <div class="blog blog-primary">
-                    <img src="assets/images/blog-3.jpg" class="img-fluid rounded-md shadow" alt="">
-                    <div class="p-4 pb-0">
-                        <a href="" class="title text-dark h5 text-justify">Les seuils de revenus mensuels nécessaires pour bénéficier de la carte à débit différé</a>
-
-                        <p class="text-truncate mt-3 mb-0 text-justify">Au cours des dernières années, les banques digitales ont procédé à un relèvement des seuils de revenus nécessaires pour bénéficier d’une carte bancaire à débit différé. Ce moyen de paiement spécifique permet en effet de reporter le débit des opérations (achats, réservations…) à la fin du mois et le risque d’impayé reste ainsi élevé.</p>
-
-                        <div class="mt-3">
-                            <a href="" class="btn btn-link primary">Savoir plus <i class="uil uil-arrow-right"></i></a>
+                <div class="card">
+                    <div class="card__header">
+                        <img src="https://source.unsplash.com/600x400/?car,automobile" alt="card__image"
+                            class="card__image" width="600">
+                    </div>
+                    <div class="card__body">
+                        <span class="tag tag-red">BNDA</span>
+                        <h5 class="text-truncate">Les seuils de revenus mensuels nécessaires
+                            pour bénéficier de la carte à débit différé</h5>
+                        <p class="text-truncate">Au cours des dernières années, les banques
+                            digitales ont procédé à un relèvement des seuils de revenus nécessaires pour bénéficier
+                            d’une carte bancaire à débit différé. Ce moyen de paiement spécifique permet en effet de
+                            reporter le débit des opérations (achats, réservations…) à la fin du mois et le risque
+                            d’impayé reste ainsi élevé.</p>
+                    </div>
+                    <div class="card__footer">
+                        <div class="user profile-userlink">
+                            <img src="../../../assets/images/client/01.jpg" alt="">
+                           
+                            <div class="user__info">
+                                <h5 style="margin-bottom: 0px;">Admin</h5>
+                                <small>25 Oct. 2023</small>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div><!--end col-->
-        </div><!--end row-->
+                </div> -->
+                
+            </div>
+        </div>
     </div><!--end container-->
 </section><!--end section-->
 <!-- End -->

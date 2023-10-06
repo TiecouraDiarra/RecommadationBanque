@@ -32,7 +32,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BanquesComponent } from './banques/banques.component';
 import { MesBanquesComponent } from './mes-banques/mes-banques.component';
 import { TauxplacementComponent } from './tauxplacement/tauxplacement.component';
-import { BanqueligneComponent } from './banqueligne/banqueligne.component';
+import { AdministrationComponent } from './administration/administration.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { BanqueComponent } from './administration/banque/banque.component';
+import { UtilisateurComponent } from './administration/utilisateur/utilisateur.component';
+import { GestblogComponent } from './administration/gestblog/gestblog.component';
+import { QuestionsComponent } from './administration/questions/questions.component';
+import { DashboardComponent } from './administration/dashboard/dashboard.component';
 
 const icons = {
   Menu, ArrowUp, User, Play
@@ -59,7 +66,12 @@ const icons = {
     BanquesComponent,
     MesBanquesComponent,
     TauxplacementComponent,
-    BanqueligneComponent
+    AdministrationComponent,
+    BanqueComponent,
+    UtilisateurComponent,
+    GestblogComponent,
+    QuestionsComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
@@ -71,6 +83,8 @@ const icons = {
     ScrollToModule.forRoot(),
     FeatherModule.pick(icons),
     NgbModalModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
     // NgxYoutubePlayerModule.forRoot()
   ]
 })

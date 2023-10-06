@@ -20,7 +20,7 @@ import { OuverturecompteComponent } from './ouverturecompte/ouverturecompte.comp
 import { BanquesComponent } from './banques/banques.component';
 import { MesBanquesComponent } from './mes-banques/mes-banques.component';
 import { TauxplacementComponent } from './tauxplacement/tauxplacement.component';
-import { BanqueligneComponent } from './banqueligne/banqueligne.component';
+import { AdministrationComponent } from './administration/administration.component';
 // import { ContactComponent } from '../shared/contact/contact.component';
 
 const routes: Routes = [
@@ -104,8 +104,8 @@ const routes: Routes = [
     component: TauxplacementComponent
   },
   {
-    path: 'banque-ligne',
-    component: BanqueligneComponent
+    path: 'administration',
+    component: AdministrationComponent
   }
 ];
 

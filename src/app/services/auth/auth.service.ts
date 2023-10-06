@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { StorageService } from '../storage/storage.service';
 import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
+// import { CookieService } from 'ngx-cookie-service'; // Importez le CookieService
 
 const URL_BASE: string = environment.Url_BASE
 
@@ -17,7 +18,8 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private storageService: StorageService
+    private storageService: StorageService,
+    // private cookieService: CookieService
   ) { }
 
   // Méthode pour ajouter le token JWT aux en-têtes
@@ -44,33 +46,50 @@ export class AuthService {
 
   //METHODE PERMETTANT DE S'INSCRIRE
   inscription(
-    nom: string,
-    prenom: string,
+    first_name: string,
+    last_name: string,
     email: string,
     password: string,
-    roles: string,
+    // roles: string,
   ): Observable<any> {
-    const formData = new FormData();
-    formData.append('nom', nom);
-    formData.append('prenom', nom);
-    formData.append('email', email);
-    formData.append('password', password);
-    formData.append('roles', roles);
+    // const formData = new FormData();
+    // formData.append('first_name', first_name);
+    // formData.append('last_name', last_name);
+    // formData.append('email', email);
+    // formData.append('password', password);
+    // formData.append('roles', roles);
+    console.log(first_name);
+    console.log(last_name);
+    console.log(email);
+    console.log(password);
 
     return this.http.post(
-      URL_BASE + '/register',
-      formData,
+      URL_BASE + 'auth/api/register/',
+      {
+        first_name,
+        last_name,
+        email,
+        password,
+      },
+      httpOptions
     );
   }
 
   //METHODE PERMETTANT DE SE DECONNECTER
-  logout(): Observable<any> {
-    const req = new HttpRequest('POST', URL_BASE + '/logout', {}, httpOptions);
-    return this.http.request(req);
-  }
+  // logout(): Observable<any> {
+  //   const req = new HttpRequest('POST', URL_BASE + '/logout', {}, httpOptions);
+  //   return this.http.request(req);
+  // }
 
   //METHODE PERMETTANT D'ACTUALISER LA PAGE
   reloadPage(): void {
     window.location.reload();
   }
+
+  logout(): Observable<any> {
+    //return this.http.post(AUTH_API + 'signout', {}, httpOptions);
+    const req = new HttpRequest('POST', URL_BASE + '/logout', {}, httpOptions);
+    return this.http.request(req);
+  }
+  
 }

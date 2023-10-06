@@ -3,7 +3,9 @@
 //
 
 .section {
-    padding: 100px 0;
+    // padding: 100px 0;
+    padding-top: 100px;
+    padding-bottom: 20px;
     position: relative;
     @media (max-width: 768px) {
         padding: 60px 0;

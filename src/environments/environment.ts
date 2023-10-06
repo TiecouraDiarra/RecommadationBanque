@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   Url_BASE:"http://192.168.1.13:5000/",
-  Url_PHOTO:"http://192.168.1.13:5000"
+  Url_PHOTO:"http://192.168.1.13:5000/"
 };
 
 /*

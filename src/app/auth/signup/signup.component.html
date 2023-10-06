@@ -23,14 +23,14 @@
                                     <div class="card border-0" style="z-index: 1">
                                         <div class="card-body p-0">
                                             <h4 class="card-title text-center">S'inscrire</h4>
-                                            <form class="login-form mt-4">
+                                            <form class="login-form mt-4" (ngSubmit)="inscription(f)" #f="ngForm">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label">Votre nom <span
                                                                     class="text-danger">*</span></label>
                                                             <input type="text" class="form-control" placeholder="Nom"
-                                                                name="nom" [(ngModel)]="form.nom" required="">
+                                                                name="first_name" [(ngModel)]="form.first_name" required="">
                                                         </div>
                                                     </div><!--end col-->
 
@@ -39,7 +39,7 @@
                                                             <label class="form-label">Votre prenom <span
                                                                     class="text-danger">*</span></label>
                                                             <input type="text" class="form-control" placeholder="Prenom"
-                                                                name="prenom" [(ngModel)]="form.prenom" required="">
+                                                                name="last_name" [(ngModel)]="form.last_name" required="">
                                                         </div>
                                                     </div><!--end col-->
 
@@ -52,7 +52,7 @@
                                                         </div>
                                                     </div><!--end col-->
 
-                                                    <div class="col-md-6">
+                                                    <!-- <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label">Type Utilisateur <span
                                                                     class="text-danger">*</span></label>
@@ -63,7 +63,7 @@
                                                                 </option>
                                                             </select>
                                                         </div>
-                                                    </div><!--end col-->
+                                                    </div>end col -->
 
                                                     <div class="col-md-6">
                                                         <div class="pass-group group-img mb-3" style="position: relative;">
@@ -106,8 +106,8 @@
                                                     </div><!--end col-->
 
                                                     <div class="col-md-12">
-                                                        <button (click)="inscription()"
-                                                            [disabled]="!form.roles || form.roles.trim() === '' || !form.nom || form.nom.trim() === '' || !form.prenom || form.prenom.trim() === '' || !form.email || form.email.trim() === '' || !form.password || form.password.trim() === '' || !form.confirmPassword || form.confirmPassword.trim() === ''"
+                                                        <button
+                                                            [disabled]="!form.first_name || form.first_name.trim() === '' || !form.last_name || form.last_name.trim() === '' || !form.email || form.email.trim() === '' || !form.password || form.password.trim() === '' || !form.confirmPassword || form.confirmPassword.trim() === ''"
                                                             class="btn btn-primary btn-pills border-0 w-100"
                                                             style="font-weight: bold;">S'inscrire</button>
                                                     </div><!--end col-->

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BlogService } from 'src/app/services/blog/blog.service';
 // import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
@@ -7,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
+  blog: any
+  blogT: any
 
-  constructor() { }
+
+  constructor(
+    private router: Router,
+    private serviceBlog: BlogService,
+    ) { 
+      this.blogT = this.serviceBlog.blogs
+    }
 
   ngOnInit(): void {
+     //AFFICHER LA LISTE DES BANQUES
+     this.serviceBlog.AfficherLaListeBlog().subscribe(data => {
+      this.blog = data;
+      console.log(this.blog);
+    });
   }
 
   // public recentarticleOwlOptions: OwlOptions = {
@@ -40,4 +55,9 @@ export class BlogComponent implements OnInit {
   //   nav: false,
   // };
 
+  //LA METHODE PERMETTANT DE NAVIGUER VERS LA PAGE DETAILS BANQUE
+  
+  goToDettailBlog(id: number) {
+    return this.router.navigate(['detail-blog', id])
+  }
 }

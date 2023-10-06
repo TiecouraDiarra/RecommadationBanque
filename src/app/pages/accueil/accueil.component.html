@@ -6,7 +6,8 @@
         <div class="row align-items-center">
             <div class="col-lg-5 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
                 <div class="position-relative">
-                    <img src="assets/images/about.png" class="rounded-md img-fluid mx-auto d-block" alt="">
+                    <img src="./../../../assets/images/banque/Banques.png" class="rounded-md img-fluid mx-auto d-block"
+                        alt="">
                     <div class="play-icon">
                         <a href="javascript:void(0);" (click)="open(content)" data-type="youtube" data-id="yba7hPeTSjk"
                             class="play-btn lightbox">
@@ -23,17 +24,20 @@
                         <span class="typed-element text-gradient-primary typewrite"></span><br>
                         <span class="wrap"></span> pour une gestion financiere optimisee.
                     </h4>
-                    <p class="text-muted para-desc mb-0">Notre plateforme intelligente vous aide a trouver la banque
+                    <p class="text-muted para-desc mb-0" style="font-size: 17px;">Notre plateforme intelligente vous
+                        aide a trouver la banque
                         ideale en fonction de vos besoins financiers</p>
 
                     <div class="d-inline-flex rounded-md shadow p-4 bg-white mt-4">
-                        <i class="uil uil-shop display-4 mb-0 opacity-5"></i>
+                        <i class="uil uil-user-plus display-4 mb-0 opacity-5"></i>
 
                         <div class="content ms-3">
-                            <h5>Open your own shop</h5>
-                            <p class="text-muted">This is just a simple text made <br> for this unique and awesome
-                                template</p>
-                            <a href="" class="btn btn-primary btn-pills border-0">Learn More</a>
+                            <h5>Inscrivez-vous Dès Maintenant !</h5>
+                            <p class="text-muted" style="font-size: 17px;">Prêt à découvrir les meilleures opportunités
+                                bancaires ?
+                                Rejoignez-nous dès maintenant pour un voyage financier personnalisé vers des choix
+                                judicieux </p>
+                            <a href="" class="btn btn-primary btn-pills border-0">S'inscrire</a>
                         </div>
                     </div>
                 </div>
@@ -98,15 +102,16 @@
         <div class="section-header mb-3">
             <div class="row align-items-center">
                 <div class="col"></div>
-                <div class="col text-center">
-                    <h3 class="my-3">Les banques au Mali</h3>
+                <div class="col text-center mt-5">
+                    <h3 class="section-title">Les banques au Mali</h3>
                 </div>
                 <div class="col text-end">
-                    <a routerLink="/banques" class="btn btn-primary btn-pills border-0">Voir toutes les banques</a>
+                    <a routerLink="/banques" class="btn btn-outline-primary btn-sm mt-5">Voir toutes les banques</a>
                 </div>
             </div>
-            <p>Les banques les plus aimees</p>
+            <p class="section-description">Les banques les plus aimées</p>
         </div>
+
 
         <div class="row no-gutters clients-wrap clearfix wow fadeInUp"
             style="visibility: visible; animation-name: fadeInUp;">
@@ -119,22 +124,33 @@
                 </div>
             </div> -->
 
-            <div class="col-md-3 mb-3">
+            <div class="col-md-3 mb-3" *ngFor="let BanquesT of banque">
                 <div class="card-sl">
-                    <div class="card-image">
-                        <img src="./../../../assets/images/banque/bam.png" />
+                    <div class="card-image" *ngIf="BanquesT.photo; else noImages">
+                        <img *ngIf="BanquesT.photo !== '/sssd'" src="{{ generateImageUrl(BanquesT.photo) }}"
+                            class="img-fluid image-sizeresents" />
+                        <img *ngIf="BanquesT.photo === '/sssd'" src="./../../../assets/images/banque/bam.png"
+                            alt="Autre image" class="img-fluid image-sizeresents" />
                     </div>
+                    <ng-template #noImages>
+                        <img src="./../../../assets/images/banque/bam.png"
+                            class="img-fluid image-sizeresents" alt="default-img">
+                    </ng-template>
 
                     <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
                     <div class="card-heading">
-                        BAM
+                        {{BanquesT.nom}}
                     </div>
                     <div class="card-text">
                         <div class="clearfix mb-3">
-                            <span class="float-start price-hp">Frais annuel</span>
-                            <span class="float-end badge rounded-pill bg-primary">12550 FCFA</span>
+                            <span class="float-start price-hp" style="font-weight: bold;">Siege social</span>
+                            <span class="float-end price-hp">Bamako</span>
+                            <!-- <span class="float-end badge rounded-pill bg-primary">12550 FCFA</span> -->
                         </div>
                     </div>
+                    <!-- <div class="card-text">
+                        $67,400
+                    </div> -->
                     <a routerLink="/detail-banque" class="card-button"> Savoir plus</a>
                 </div>
             </div>

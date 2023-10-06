@@ -1,0 +1,119 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-title mt-3">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h4>Liste des <b>Blogs</b></h4>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="search-box">
+                            <i class="uil uil-search"></i>
+                            <input type="text" [(ngModel)]="searchTextBlog" class="form-control"
+                                placeholder="Rechercher">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <select [(ngModel)]="searchTextBlog" class="form-select" id="floatingSelect"
+                                aria-label="Floating label select example">
+                                <option value="">
+                                    Tout
+                                </option>
+                                <option *ngFor="let item of roles" [value]="item.nom">
+                                    {{ item.nom }}
+                                </option>
+                            </select>
+                            <!-- <label for="floatingSelect">Selectionner un role</label> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <a href="#" class="btn ajoutUser">Ajouter un blog</a>
+                    </div>
+                </div>
+            </div>
+            <div class="main-box clearfix">
+                <div class="table-responsive">
+                    <table class="table user-list">
+                        <thead>
+                            <tr>
+                                <th><span>Blogs</span></th>
+                                <th><span>Date de creation</span></th>
+                                <th class="text-center"><span>Status</span></th>
+                                <th><span>Utilisateurs</span></th>
+                                <th><span>Actions</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                                *ngFor="let BlogT of blogT | filter : searchTextBlog | paginate:{itemsPerPage :3, currentPage:p3, id: 'blog'}">
+                                <td>
+                                    <img [src]="BlogT.img1" alt="">
+                                    <span class="user-link">{{ BlogT.titre | slice:0:40 }}{{
+                                        BlogT.titre.length > 40 ? '...' : '' }}</span>
+                                    <!-- <span class="user-subhead">Admin</span> -->
+                                </td>
+                                <td>
+                                    {{BlogT.datecreation}}
+                                </td>
+                                <td class="text-center">
+                                    <span class="label label-default">Inactive</span>
+                                </td>
+                                <td>
+                                    <p>{{BlogT.nomuser}}</p>
+                                </td>
+                                <td style="width: 20%;">
+                                    <a href="#" class="table-link">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                    <a class="table-link crd" data-bs-toggle="modal" data-bs-target="#modifierBlog">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                    <a (click)="SupprimerBlog(BlogT.id)" class="table-link danger crd">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    \<!-- Modal Modification -->
+                    <div class="modal fade" id="modifierBlog" tabindex="-1" aria-labelledby="modifierBlog"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="modifierBlog">Modifier un blog</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Annuler</button>
+                                    <button type="button" class="btn btn-primary">Modifier</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <pagination-controls *ngIf="blogT && blogT.length > 0" (pageChange)="p3 = $event"
+                        previousLabel="Précédent" nextLabel="Suivant" class="pagination"
+                        previousClass="pagination__previous" nextClass="pagination__next"
+                        containerClass="pagination__container" pageClass="pagination__page"
+                        activeClassName="pagination__page--active" disabledClass="pagination__page--disabled"
+                        id="blog"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

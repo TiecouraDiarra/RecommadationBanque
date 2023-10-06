@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-profil',
@@ -11,6 +12,8 @@ export class ProfilComponent implements OnInit {
   public ToggledataC = true;
   public ToggledataO = true;
 
+  User: any
+
   iconLogle() {
     this.Toggledata = !this.Toggledata;
   }
@@ -22,9 +25,16 @@ export class ProfilComponent implements OnInit {
   iconLogleO() {
     this.ToggledataO = !this.ToggledataO;
   }
-  constructor() { }
+  constructor(private serviceUser: UserService) { }
 
   ngOnInit(): void {
-  }
 
+    //AFFICHER LES INFORMATIONS DE USER CONNECTE
+    this.serviceUser.AfficherInfoUserConnecte().subscribe(data => {
+      this.User = data;
+      console.log(this.User);
+    }
+    );
+
+  }
 }

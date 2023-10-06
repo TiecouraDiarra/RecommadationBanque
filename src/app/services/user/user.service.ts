@@ -32,10 +32,17 @@ export class UserService {
   }
   // Méthode pour ajouter le token JWT aux en-têtes
   getHeaders(): HttpHeaders {
-    const token = this.storageService.getUser().token;
+    const token = this.storageService.getUser().access;
     return new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
+  }
+
+  //AFFICHER LES INFORMATIONS DE USER CONNECTE
+  AfficherInfoUserConnecte(): Observable<any> {
+    const headers = this.getHeaders();
+    console.log(headers)
+    return this.http.get(`${URL_BASE}auth/api/user_info/`, { headers });
   }
 
   //AFFICHER LA PHOTO DE USER CONNECTER

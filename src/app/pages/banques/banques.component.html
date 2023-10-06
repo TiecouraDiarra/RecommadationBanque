@@ -14,9 +14,9 @@
                             <div class="mt-3">
                                 <div class="form-floating">
                                     <select class="form-select" id="floatingSelect"
-                                        aria-label="Floating label select example" ame="pays"
+                                        aria-label="Floating label select example" name="pays"
                                         (change)="onChange($event.target)" [ngModel]="selectedValue">
-                                        <option value="pays" selected>pays</option>
+                                        <option value="" selected>pays</option>
                                         <option *ngFor="let item of pays" [value]="item.nom">
                                             {{ item.nom }}
                                         </option>
@@ -26,8 +26,8 @@
                             </div>
                             <div class="mt-3">
                                 <div class="form-floating">
-                                    <select (change)="onChangeRegion($event.target)" [ngModel]="selectedValueR"
-                                        class="form-select" id="floatingSelect"
+                                    <select name="region" (change)="onChangeRegion($event.target)"
+                                        [ngModel]="selectedValueR" class="form-select" id="floatingSelect"
                                         aria-label="Floating label select example">
                                         <option *ngFor="let item of regions" [value]="item.nom">
                                             {{ item.nom }}
@@ -53,64 +53,31 @@
                 <div class="col-lg-8">
                     <div class="container mt-4">
                         <div class="row">
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-4 mb-3"
+                                *ngFor="let BanquesT of banque | paginate:{itemsPerPage :6, currentPage:p1}">
                                 <div class="card-sl">
-                                    <div class="card-image">
-                                        <img src="./../../../assets/images/banque/bam.png" />
+                                    <div class="card-image" *ngIf="BanquesT.photo; else noImages">
+                                        <img *ngIf="BanquesT.photo !== '/sssd'"
+                                            src="{{ generateImageUrl(BanquesT.photo) }}"
+                                            class="img-fluid image-sizeresents" />
+                                        <img *ngIf="BanquesT.photo === '/sssd'" src="./../../../assets/images/banque/bam.png"
+                                            alt="Autre image" class="img-fluid image-sizeresents" />
                                     </div>
+                                    <ng-template #noImages>
+                                        <img src="./../../../assets/images/banque/bam.png"
+                                            class="img-fluid image-sizeresents" alt="default-img">
+                                    </ng-template>
 
                                     <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
                                     <div class="card-heading">
-                                        BAM
+                                        {{BanquesT.nom}}
                                     </div>
                                     <div class="card-text">
                                         <div class="clearfix mb-3">
-                                            <span class="float-start price-hp">Frais annuel</span>
-                                            <span class="float-end badge rounded-pill bg-primary">12550 FCFA</span>
-                                        </div>
-                                    </div>
-                                    <!-- <div class="card-text">
-                                        $67,400
-                                    </div> -->
-                                    <a href="#" class="card-button"> Savoir plus</a>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <div class="card-sl">
-                                    <div class="card-image">
-                                        <img src="./../../../assets/images/banque/bam.png" />
-                                    </div>
-
-                                    <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
-                                    <div class="card-heading">
-                                        BAM
-                                    </div>
-                                    <div class="card-text">
-                                        <div class="clearfix mb-3">
-                                            <span class="float-start price-hp">Frais annuel</span>
-                                            <span class="float-end badge rounded-pill bg-primary">12550 FCFA</span>
-                                        </div>
-                                    </div>
-                                    <!-- <div class="card-text">
-                                        $67,400
-                                    </div> -->
-                                    <a href="#" class="card-button"> Savoir plus</a>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <div class="card-sl">
-                                    <div class="card-image">
-                                        <img src="./../../../assets/images/banque/bam.png" />
-                                    </div>
-
-                                    <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
-                                    <div class="card-heading">
-                                        BAM
-                                    </div>
-                                    <div class="card-text">
-                                        <div class="clearfix mb-3">
-                                            <span class="float-start price-hp">Frais annuel</span>
-                                            <span class="float-end badge rounded-pill bg-primary">12550 FCFA</span>
+                                            <span class="float-start price-hp" style="font-weight: bold;">Siege
+                                                social</span>
+                                            <span class="float-end price-hp">Hamdallaye</span>
+                                            <!-- <span class="float-end badge rounded-pill bg-primary">12550 FCFA</span> -->
                                         </div>
                                     </div>
                                     <!-- <div class="card-text">
@@ -120,6 +87,12 @@
                                 </div>
                             </div>
                         </div>
+                        <pagination-controls *ngIf="banqueT && banqueT.length > 0" (pageChange)="p1 = $event"
+                            previousLabel="Précédent" nextLabel="Suivant" class="pagination"
+                            previousClass="pagination__previous" nextClass="pagination__next"
+                            containerClass="pagination__container" pageClass="pagination__page"
+                            activeClassName="pagination__page--active"
+                            disabledClass="pagination__page--disabled"></pagination-controls>
                     </div>
                 </div>
             </div>
